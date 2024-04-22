@@ -28,9 +28,9 @@ jobs:
       - name: Package
         run: |
           PACKAGE_VERSION="0.1.${{ steps.version.outputs.timestamp }}-$(echo $GITHUB_SHA | cut -c1-7)"
-          dotnet pack Client/Client.csproj --no-restore --no-build --configuration Release -p:PackageID=TypoImageGenClient -p:PackageVersion=$PACKAGE_VERSION -o ./nupkg
+          dotnet pack Client/Client.csproj --no-restore --no-build --configuration Release -p:PackageID=TypoImageGen.Client -p:PackageVersion=$PACKAGE_VERSION -o ./nupkg
 
       - name: Publish
         run: |
           PACKAGE_VERSION="0.1.${{ steps.version.outputs.timestamp }}-$(echo $GITHUB_SHA | cut -c1-7)"
-          dotnet nuget push "./nupkg/TypoImageGenClient.$PACKAGE_VERSION.nupkg" -s https://nuget.pkg.github.com/toobeeh/index.json -k ${{ secrets.NUGET_AUTH_TOKEN }}
+          dotnet nuget push "./nupkg/TypoImageGen.Client.$PACKAGE_VERSION.nupkg" -s https://nuget.pkg.github.com/toobeeh/index.json -k ${{ secrets.NUGET_AUTH_TOKEN }}
