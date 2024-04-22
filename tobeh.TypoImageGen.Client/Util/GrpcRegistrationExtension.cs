@@ -9,7 +9,7 @@ public static class GrpcRegistrationExtension
 {
     public static IServiceCollection AddTypoImageGeneratorGrpc(this IServiceCollection services, string address)
     {
-        var assembly = Assembly.Load("TypoImageGenerator");
+        var assembly = Assembly.Load("tobeh.TypoImageGen");
         
         // Get MethodInfo for the AddGrpcClient method
         var addGrpcClientMethod = typeof(GrpcClientServiceExtensions)
