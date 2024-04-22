@@ -23,12 +23,12 @@ jobs:
         run: echo "::set-output name=timestamp::$(date +%s)"
 
       - name: Build
-        run: dotnet build Client/Client.csproj --configuration Release
+        run: dotnet build tobeh.TypoImageGen.Client/tobeh.TypoImageGen.Client.csproj --configuration Release
 
       - name: Package
         run: |
           PACKAGE_VERSION="0.1.${{ steps.version.outputs.timestamp }}"
-          dotnet pack Client/Client.csproj --no-restore --no-build --configuration Release -p:PackageID=tobeh.TypoImageGen.Client -p:PackageVersion=$PACKAGE_VERSION -o ./nupkg
+          dotnet pack tobeh.TypoImageGen.Client/Client.csproj --no-restore --no-build --configuration Release -p:PackageID=tobeh.TypoImageGen.Client -p:PackageVersion=$PACKAGE_VERSION -o ./nupkg
 
       - name: Publish
         run: |

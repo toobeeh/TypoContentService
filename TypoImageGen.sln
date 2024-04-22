@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypoImageGen", "TypoImageGen\TypoImageGen.csproj", "{182CFCB5-B0B5-4A33-825F-BCB6F03DF45C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{7C59D44C-E0D7-4A7B-80B7-377968E2F831}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tobeh.TypoImageGen.Client", "tobeh.TypoImageGen.Client\tobeh.TypoImageGen.Client.csproj", "{7C59D44C-E0D7-4A7B-80B7-377968E2F831}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
