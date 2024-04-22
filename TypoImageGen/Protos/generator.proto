@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "TypoImageGenerator";
+
+package generator;
+
+service ImageGenerator {
+  
+  // Combine images to one
+  rpc GenerateComboFromUrls (GenerateComboFromUrlsMessage) returns (stream GeneratedImageMessage);
+}
+
+message GenerateComboFromUrlsMessage {
+  repeated string sourceUrls = 1;}
+
+message GeneratedImageMessage {
+  bytes chunk = 1;
+  int32 chunkIndex = 2;
+  string name = 3;
+  string fileType = 4;  
+}
+
+
