@@ -17,10 +17,6 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: '8.0.x'
-          
-      - name: Generate Version Date
-        id: version-date
-        run: echo "::set-output name=date::$(date +'%Y.%m.%d')"
         
       - name: Build
         run: dotnet build Client/Client.csproj --configuration Release
@@ -28,11 +24,11 @@ jobs:
       - name: Package
         run: >
           dotnet pack Client/Client.csproj --no-restore --no-build --configuration Release
-          -p:PackageVersion=${{ steps.version-date.outputs.date }}-$(echo $GITHUB_SHA | cut -c1-7)
+          -p:PackageVersion=$(echo $GITHUB_SHA | cut -c1-7)
           
       - name: Publish
         run: >
-          dotnet nuget push Client.${{ steps.version-date.outputs.date }}-$(echo $GITHUB_SHA | cut -c1-7).nupkg 
+          dotnet nuget push Client.$(echo $GITHUB_SHA | cut -c1-7).nupkg 
           -s https://nuget.pkg.github.com/toobeeh/index.json
           -k ${{ secrets.NUGET_AUTH_TOKEN }}
         
