@@ -1,0 +1,34 @@
+name: Build and Publish
+
+on:
+  push:
+    branches:
+      - main
+        
+jobs:
+  build:
+    name: Build Package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '8.0.x'
+          
+      - name: Build
+        run: dotnet build --configuration Release
+        
+      - name: Package
+        run: >
+          dotnet pack --no-restore --no-build --configuration Release
+          -p:PackageVersion=$(date +'%Y.%m.%d')-$(echo $GITHUB_SHA | cut -c1-7)
+          
+      - name: Publish
+        run: >
+          dotnet nuget push TypoImageGenerator.$(date +'%Y.%m.%d')-$(echo $GITHUB_SHA | cut -c1-7).nupkg 
+          -s https://nuget.pkg.github.com/toobeeh/index.json
+          -k ${{ secrets.NUGET_AUTH_TOKEN }}
+        
+        
