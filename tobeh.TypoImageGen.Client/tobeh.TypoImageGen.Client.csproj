@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RepositoryUrl>https://github.com/toobeeh/TypoImageGen</RepositoryUrl>
-        <RootNamespace>Client</RootNamespace>
+        <RootNamespace>tobeh.TypoImageGen.Client</RootNamespace>
     </PropertyGroup>
     
     <ItemGroup>
