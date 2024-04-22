@@ -33,4 +33,6 @@ jobs:
       - name: Publish
         run: |
           PACKAGE_VERSION="0.1.${{ steps.version.outputs.timestamp }}-$(echo $GITHUB_SHA | cut -c1-7)"
-          dotnet nuget push "./nupkg/TypoImageGen.Client.$PACKAGE_VERSION.nupkg" -s https://nuget.pkg.github.com/toobeeh/index.json -k ${{ secrets.NUGET_AUTH_TOKEN }}
+          dotnet nuget push "./nupkg/TypoImageGen.Client.$PACKAGE_VERSION.nupkg" -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
