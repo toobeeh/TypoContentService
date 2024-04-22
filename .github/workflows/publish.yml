@@ -24,11 +24,11 @@ jobs:
       - name: Package
         run: >
           dotnet pack Client/Client.csproj --no-restore --no-build --configuration Release
-          -p:PackageVersion=$(echo $GITHUB_SHA | cut -c1-7)
+          -p:PackageVersion=0.1-$(echo $GITHUB_SHA | cut -c1-7)
           
       - name: Publish
         run: >
-          dotnet nuget push Client.$(echo $GITHUB_SHA | cut -c1-7).nupkg 
+          dotnet nuget push Client.0.1-$(echo $GITHUB_SHA | cut -c1-7).nupkg 
           -s https://nuget.pkg.github.com/toobeeh/index.json
           -k ${{ secrets.NUGET_AUTH_TOKEN }}
         
