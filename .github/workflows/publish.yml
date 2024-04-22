@@ -28,11 +28,11 @@ jobs:
       - name: Package
         run: |
           PACKAGE_VERSION="0.1.${{ steps.version.outputs.timestamp }}"
-          dotnet pack Client/Client.csproj --no-restore --no-build --configuration Release -p:PackageID=TypoImageGen.Client -p:PackageVersion=$PACKAGE_VERSION -o ./nupkg
+          dotnet pack Client/Client.csproj --no-restore --no-build --configuration Release -p:PackageID=tobeh.TypoImageGen.Client -p:PackageVersion=$PACKAGE_VERSION -o ./nupkg
 
       - name: Publish
         run: |
           PACKAGE_VERSION="0.1.${{ steps.version.outputs.timestamp }}"
-          dotnet nuget push "./nupkg/TypoImageGen.Client.$PACKAGE_VERSION.nupkg" -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
+          dotnet nuget push "./nupkg/tobeh.TypoImageGen.Client.$PACKAGE_VERSION.nupkg" -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
