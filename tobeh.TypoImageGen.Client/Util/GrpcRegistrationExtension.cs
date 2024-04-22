@@ -3,12 +3,14 @@ using Grpc.Core;
 using Grpc.Net.ClientFactory;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Client.Util;
+namespace tobeh.TypoImageGen.Client.Util;
 
 public static class GrpcRegistrationExtension
 {
-    public static IServiceCollection AddGrpcClients(this IServiceCollection services, Assembly assembly, string address)
+    public static IServiceCollection AddTypoImageGeneratorGrpc(this IServiceCollection services, string address)
     {
+        var assembly = Assembly.Load("TypoImageGenerator");
+        
         // Get MethodInfo for the AddGrpcClient method
         var addGrpcClientMethod = typeof(GrpcClientServiceExtensions)
             .GetMethods(BindingFlags.Public | BindingFlags.Static)

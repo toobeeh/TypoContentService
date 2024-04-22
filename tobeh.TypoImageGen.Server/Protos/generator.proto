@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option csharp_namespace = "TypoImageGenerator";
+option csharp_namespace = "tobeh.TypoImageGen";
 
 package generator;
 

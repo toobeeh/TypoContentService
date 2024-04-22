@@ -1,10 +1,10 @@
 using Google.Protobuf;
 using ImageMagick;
 using Microsoft.Extensions.Options;
-using TypoImageGen.Config;
-using TypoImageGenerator;
+using tobeh.TypoImageGen;
+using tobeh.TypoImageGen.Server.Config;
 
-namespace TypoImageGen.Service;
+namespace tobeh.TypoImageGen.Server.Service;
 
 public class ComboImageGenerator(ILogger<ComboImageGenerator> logger, CachedFileProvider cachedFileProvider, IOptions<ImageGeneratorConfig> _options)
 {

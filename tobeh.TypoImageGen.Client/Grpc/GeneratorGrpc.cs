@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace TypoImageGenerator {
+namespace tobeh.TypoImageGen {
   public static partial class ImageGenerator
   {
     static readonly string __ServiceName = "generator.ImageGenerator";
@@ -46,12 +46,12 @@ namespace TypoImageGenerator {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TypoImageGenerator.GenerateComboFromUrlsMessage> __Marshaller_generator_GenerateComboFromUrlsMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TypoImageGenerator.GenerateComboFromUrlsMessage.Parser));
+    static readonly grpc::Marshaller<global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage> __Marshaller_generator_GenerateComboFromUrlsMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TypoImageGenerator.GeneratedImageMessage> __Marshaller_generator_GeneratedImageMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TypoImageGenerator.GeneratedImageMessage.Parser));
+    static readonly grpc::Marshaller<global::tobeh.TypoImageGen.GeneratedImageMessage> __Marshaller_generator_GeneratedImageMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::tobeh.TypoImageGen.GeneratedImageMessage.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::TypoImageGenerator.GenerateComboFromUrlsMessage, global::TypoImageGenerator.GeneratedImageMessage> __Method_GenerateComboFromUrls = new grpc::Method<global::TypoImageGenerator.GenerateComboFromUrlsMessage, global::TypoImageGenerator.GeneratedImageMessage>(
+    static readonly grpc::Method<global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage, global::tobeh.TypoImageGen.GeneratedImageMessage> __Method_GenerateComboFromUrls = new grpc::Method<global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage, global::tobeh.TypoImageGen.GeneratedImageMessage>(
         grpc::MethodType.ServerStreaming,
         __ServiceName,
         "GenerateComboFromUrls",
@@ -61,7 +61,7 @@ namespace TypoImageGenerator {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::TypoImageGenerator.GeneratorReflection.Descriptor.Services[0]; }
+      get { return global::tobeh.TypoImageGen.GeneratorReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Client for ImageGenerator</summary>
@@ -100,7 +100,7 @@ namespace TypoImageGenerator {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncServerStreamingCall<global::TypoImageGenerator.GeneratedImageMessage> GenerateComboFromUrls(global::TypoImageGenerator.GenerateComboFromUrlsMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncServerStreamingCall<global::tobeh.TypoImageGen.GeneratedImageMessage> GenerateComboFromUrls(global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GenerateComboFromUrls(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -111,7 +111,7 @@ namespace TypoImageGenerator {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncServerStreamingCall<global::TypoImageGenerator.GeneratedImageMessage> GenerateComboFromUrls(global::TypoImageGenerator.GenerateComboFromUrlsMessage request, grpc::CallOptions options)
+      public virtual grpc::AsyncServerStreamingCall<global::tobeh.TypoImageGen.GeneratedImageMessage> GenerateComboFromUrls(global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_GenerateComboFromUrls, null, options, request);
       }

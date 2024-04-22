@@ -1,4 +1,4 @@
-namespace TypoImageGen.Config;
+namespace tobeh.TypoImageGen.Server.Config;
 
 public class ImageGeneratorConfig{
     public required string CachePath { get; init; }

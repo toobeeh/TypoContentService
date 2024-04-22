@@ -1,8 +1,8 @@
-using TypoImageGen.Config;
-using TypoImageGen.Grpc;
-using TypoImageGen.Service;
+using tobeh.TypoImageGen.Server.Config;
+using tobeh.TypoImageGen.Server.Grpc;
+using tobeh.TypoImageGen.Server.Service;
 
-namespace TypoImageGen;
+namespace tobeh.TypoImageGen.Server;
 
 public class Program
 {

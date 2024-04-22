@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace TypoImageGenerator {
+namespace tobeh.TypoImageGen {
 
   /// <summary>Holder for reflection information generated from generator.proto</summary>
   public static partial class GeneratorReflection {
@@ -30,13 +30,13 @@ namespace TypoImageGenerator {
             "AiABKAUSDAoEbmFtZRgDIAEoCRIQCghmaWxlVHlwZRgEIAEoCTJ2Cg5JbWFn",
             "ZUdlbmVyYXRvchJkChVHZW5lcmF0ZUNvbWJvRnJvbVVybHMSJy5nZW5lcmF0",
             "b3IuR2VuZXJhdGVDb21ib0Zyb21VcmxzTWVzc2FnZRogLmdlbmVyYXRvci5H",
-            "ZW5lcmF0ZWRJbWFnZU1lc3NhZ2UwAUIVqgISVHlwb0ltYWdlR2VuZXJhdG9y",
+            "ZW5lcmF0ZWRJbWFnZU1lc3NhZ2UwAUIVqgISdG9iZWguVHlwb0ltYWdlR2Vu",
             "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TypoImageGenerator.GenerateComboFromUrlsMessage), global::TypoImageGenerator.GenerateComboFromUrlsMessage.Parser, new[]{ "SourceUrls" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TypoImageGenerator.GeneratedImageMessage), global::TypoImageGenerator.GeneratedImageMessage.Parser, new[]{ "Chunk", "ChunkIndex", "Name", "FileType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage), global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage.Parser, new[]{ "SourceUrls" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.GeneratedImageMessage), global::tobeh.TypoImageGen.GeneratedImageMessage.Parser, new[]{ "Chunk", "ChunkIndex", "Name", "FileType" }, null, null, null, null)
           }));
     }
     #endregion
@@ -57,7 +57,7 @@ namespace TypoImageGenerator {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TypoImageGenerator.GeneratorReflection.Descriptor.MessageTypes[0]; }
+      get { return global::tobeh.TypoImageGen.GeneratorReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -235,7 +235,7 @@ namespace TypoImageGenerator {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TypoImageGenerator.GeneratorReflection.Descriptor.MessageTypes[1]; }
+      get { return global::tobeh.TypoImageGen.GeneratorReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

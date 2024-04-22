@@ -1,8 +1,7 @@
 using Grpc.Core;
-using TypoImageGen.Service;
-using TypoImageGenerator;
+using tobeh.TypoImageGen.Server.Service;
 
-namespace TypoImageGen.Grpc;
+namespace tobeh.TypoImageGen.Server.Grpc;
 
 public class ImageGeneratorService(
     ILogger<ImageGeneratorService> logger,

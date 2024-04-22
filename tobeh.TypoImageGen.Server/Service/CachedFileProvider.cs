@@ -1,8 +1,8 @@
 using System.Text;
 using Microsoft.Extensions.Options;
-using TypoImageGen.Config;
+using tobeh.TypoImageGen.Server.Config;
 
-namespace TypoImageGen.Service;
+namespace tobeh.TypoImageGen.Server.Service;
 
 public class CachedFileProvider
 {
