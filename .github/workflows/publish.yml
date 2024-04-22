@@ -28,7 +28,7 @@ jobs:
       - name: Package
         run: |
           PACKAGE_VERSION="0.1.${{ steps.version.outputs.timestamp }}"
-          dotnet pack tobeh.TypoImageGen.Client/Client.csproj --no-restore --no-build --configuration Release -p:PackageID=tobeh.TypoImageGen.Client -p:PackageVersion=$PACKAGE_VERSION -o ./nupkg
+          dotnet pack tobeh.TypoImageGen.Client/tobeh.TypoImageGen.Client.csproj --no-restore --no-build --configuration Release -p:PackageID=tobeh.TypoImageGen.Client -p:PackageVersion=$PACKAGE_VERSION -o ./nupkg
 
       - name: Publish
         run: |
