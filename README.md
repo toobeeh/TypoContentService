@@ -1,4 +1,6 @@
-# TypoImageGen
+# TypoImageGen  
+![NuGet Version](https://img.shields.io/nuget/v/tobeh.TypoImageGen.Client?style=flat&logo=nuget&label=NuGet&color=blue)
+
 
 TypoImageGen is a small gRPC microservice to generate assets for skribbltypo.  
 This includes for example generating sprite combo images (stacking gif frames) or rendering the customcard of typo.
