@@ -19,6 +19,14 @@ public class ComboImageGenerator(
     public async Task<List<FileChunkMessage>> GenerateComboFromUrls(GenerateComboMessage request)
     {
         logger.LogTrace("GenerateComboFromUrls(request={request})", request);
+
+        if (request.SpriteIds.Count == 0)
+        {
+            return
+            [
+                new FileChunkMessage { ChunkIndex = 0, Chunk = ByteString.Empty, FileType = "png", Name = "empty.png" }
+            ];
+        }
         
         var resultFileName = $"url-combo-{DateTimeOffset.UtcNow.ToUnixTimeSeconds()}";
 
