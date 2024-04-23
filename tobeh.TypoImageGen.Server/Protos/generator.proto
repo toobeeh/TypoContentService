@@ -9,9 +9,14 @@ service ImageGenerator {
   // Combine images to one
   rpc GenerateSpriteCombo (GenerateComboMessage) returns (stream FileChunkMessage);
 }
+message ColorMapMessage {
+  int32 spriteId = 1;
+  int32 hueShift = 3;
+}
 
 message GenerateComboMessage {
   repeated int32 spriteIds = 1;
+  repeated ColorMapMessage colorMaps = 2;
 }
 
 message FileChunkMessage {

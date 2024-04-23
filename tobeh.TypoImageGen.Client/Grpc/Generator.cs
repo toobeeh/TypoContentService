@@ -24,17 +24,20 @@ namespace tobeh.TypoImageGen {
     static GeneratorReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9nZW5lcmF0b3IucHJvdG8SCWdlbmVyYXRvciIpChRHZW5lcmF0ZUNvbWJv",
-            "TWVzc2FnZRIRCglzcHJpdGVJZHMYASADKAUiVQoQRmlsZUNodW5rTWVzc2Fn",
-            "ZRINCgVjaHVuaxgBIAEoDBISCgpjaHVua0luZGV4GAIgASgFEgwKBG5hbWUY",
-            "AyABKAkSEAoIZmlsZVR5cGUYBCABKAkyZwoOSW1hZ2VHZW5lcmF0b3ISVQoT",
-            "R2VuZXJhdGVTcHJpdGVDb21ibxIfLmdlbmVyYXRvci5HZW5lcmF0ZUNvbWJv",
-            "TWVzc2FnZRobLmdlbmVyYXRvci5GaWxlQ2h1bmtNZXNzYWdlMAFCFaoCEnRv",
-            "YmVoLlR5cG9JbWFnZUdlbmIGcHJvdG8z"));
+            "Cg9nZW5lcmF0b3IucHJvdG8SCWdlbmVyYXRvciI1Cg9Db2xvck1hcE1lc3Nh",
+            "Z2USEAoIc3ByaXRlSWQYASABKAUSEAoIaHVlU2hpZnQYAyABKAUiWAoUR2Vu",
+            "ZXJhdGVDb21ib01lc3NhZ2USEQoJc3ByaXRlSWRzGAEgAygFEi0KCWNvbG9y",
+            "TWFwcxgCIAMoCzIaLmdlbmVyYXRvci5Db2xvck1hcE1lc3NhZ2UiVQoQRmls",
+            "ZUNodW5rTWVzc2FnZRINCgVjaHVuaxgBIAEoDBISCgpjaHVua0luZGV4GAIg",
+            "ASgFEgwKBG5hbWUYAyABKAkSEAoIZmlsZVR5cGUYBCABKAkyZwoOSW1hZ2VH",
+            "ZW5lcmF0b3ISVQoTR2VuZXJhdGVTcHJpdGVDb21ibxIfLmdlbmVyYXRvci5H",
+            "ZW5lcmF0ZUNvbWJvTWVzc2FnZRobLmdlbmVyYXRvci5GaWxlQ2h1bmtNZXNz",
+            "YWdlMAFCFaoCEnRvYmVoLlR5cG9JbWFnZUdlbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.GenerateComboMessage), global::tobeh.TypoImageGen.GenerateComboMessage.Parser, new[]{ "SpriteIds" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.ColorMapMessage), global::tobeh.TypoImageGen.ColorMapMessage.Parser, new[]{ "SpriteId", "HueShift" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.GenerateComboMessage), global::tobeh.TypoImageGen.GenerateComboMessage.Parser, new[]{ "SpriteIds", "ColorMaps" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.FileChunkMessage), global::tobeh.TypoImageGen.FileChunkMessage.Parser, new[]{ "Chunk", "ChunkIndex", "Name", "FileType" }, null, null, null, null)
           }));
     }
@@ -42,6 +45,232 @@ namespace tobeh.TypoImageGen {
 
   }
   #region Messages
+  public sealed partial class ColorMapMessage : pb::IMessage<ColorMapMessage>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ColorMapMessage> _parser = new pb::MessageParser<ColorMapMessage>(() => new ColorMapMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ColorMapMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::tobeh.TypoImageGen.GeneratorReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ColorMapMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ColorMapMessage(ColorMapMessage other) : this() {
+      spriteId_ = other.spriteId_;
+      hueShift_ = other.hueShift_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ColorMapMessage Clone() {
+      return new ColorMapMessage(this);
+    }
+
+    /// <summary>Field number for the "spriteId" field.</summary>
+    public const int SpriteIdFieldNumber = 1;
+    private int spriteId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int SpriteId {
+      get { return spriteId_; }
+      set {
+        spriteId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hueShift" field.</summary>
+    public const int HueShiftFieldNumber = 3;
+    private int hueShift_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int HueShift {
+      get { return hueShift_; }
+      set {
+        hueShift_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ColorMapMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ColorMapMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (SpriteId != other.SpriteId) return false;
+      if (HueShift != other.HueShift) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (SpriteId != 0) hash ^= SpriteId.GetHashCode();
+      if (HueShift != 0) hash ^= HueShift.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (SpriteId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(SpriteId);
+      }
+      if (HueShift != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(HueShift);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (SpriteId != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(SpriteId);
+      }
+      if (HueShift != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(HueShift);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (SpriteId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SpriteId);
+      }
+      if (HueShift != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HueShift);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ColorMapMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.SpriteId != 0) {
+        SpriteId = other.SpriteId;
+      }
+      if (other.HueShift != 0) {
+        HueShift = other.HueShift;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            SpriteId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            HueShift = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            SpriteId = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            HueShift = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class GenerateComboMessage : pb::IMessage<GenerateComboMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -56,7 +285,7 @@ namespace tobeh.TypoImageGen {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::tobeh.TypoImageGen.GeneratorReflection.Descriptor.MessageTypes[0]; }
+      get { return global::tobeh.TypoImageGen.GeneratorReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -77,6 +306,7 @@ namespace tobeh.TypoImageGen {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GenerateComboMessage(GenerateComboMessage other) : this() {
       spriteIds_ = other.spriteIds_.Clone();
+      colorMaps_ = other.colorMaps_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -97,6 +327,17 @@ namespace tobeh.TypoImageGen {
       get { return spriteIds_; }
     }
 
+    /// <summary>Field number for the "colorMaps" field.</summary>
+    public const int ColorMapsFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::tobeh.TypoImageGen.ColorMapMessage> _repeated_colorMaps_codec
+        = pb::FieldCodec.ForMessage(18, global::tobeh.TypoImageGen.ColorMapMessage.Parser);
+    private readonly pbc::RepeatedField<global::tobeh.TypoImageGen.ColorMapMessage> colorMaps_ = new pbc::RepeatedField<global::tobeh.TypoImageGen.ColorMapMessage>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::tobeh.TypoImageGen.ColorMapMessage> ColorMaps {
+      get { return colorMaps_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -113,6 +354,7 @@ namespace tobeh.TypoImageGen {
         return true;
       }
       if(!spriteIds_.Equals(other.spriteIds_)) return false;
+      if(!colorMaps_.Equals(other.colorMaps_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -121,6 +363,7 @@ namespace tobeh.TypoImageGen {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= spriteIds_.GetHashCode();
+      hash ^= colorMaps_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -140,6 +383,7 @@ namespace tobeh.TypoImageGen {
       output.WriteRawMessage(this);
     #else
       spriteIds_.WriteTo(output, _repeated_spriteIds_codec);
+      colorMaps_.WriteTo(output, _repeated_colorMaps_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -151,6 +395,7 @@ namespace tobeh.TypoImageGen {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       spriteIds_.WriteTo(ref output, _repeated_spriteIds_codec);
+      colorMaps_.WriteTo(ref output, _repeated_colorMaps_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -162,6 +407,7 @@ namespace tobeh.TypoImageGen {
     public int CalculateSize() {
       int size = 0;
       size += spriteIds_.CalculateSize(_repeated_spriteIds_codec);
+      size += colorMaps_.CalculateSize(_repeated_colorMaps_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -175,6 +421,7 @@ namespace tobeh.TypoImageGen {
         return;
       }
       spriteIds_.Add(other.spriteIds_);
+      colorMaps_.Add(other.colorMaps_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -195,6 +442,10 @@ namespace tobeh.TypoImageGen {
             spriteIds_.AddEntriesFrom(input, _repeated_spriteIds_codec);
             break;
           }
+          case 18: {
+            colorMaps_.AddEntriesFrom(input, _repeated_colorMaps_codec);
+            break;
+          }
         }
       }
     #endif
@@ -213,6 +464,10 @@ namespace tobeh.TypoImageGen {
           case 10:
           case 8: {
             spriteIds_.AddEntriesFrom(ref input, _repeated_spriteIds_codec);
+            break;
+          }
+          case 18: {
+            colorMaps_.AddEntriesFrom(ref input, _repeated_colorMaps_codec);
             break;
           }
         }
@@ -236,7 +491,7 @@ namespace tobeh.TypoImageGen {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::tobeh.TypoImageGen.GeneratorReflection.Descriptor.MessageTypes[1]; }
+      get { return global::tobeh.TypoImageGen.GeneratorReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
