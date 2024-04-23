@@ -24,7 +24,7 @@ public class CachedFileProvider
     {
         _logger.LogTrace("GetBytesFromUrl(url={url})", url);
         
-        var base64Url = Convert.ToBase64String(Encoding.UTF8.GetBytes(url));
+        var base64Url = Convert.ToBase64String(Encoding.UTF8.GetBytes(url)).Replace("/", "_");
         
         var cachePath = GetCachePath(base64Url);
         if (File.Exists(cachePath))
