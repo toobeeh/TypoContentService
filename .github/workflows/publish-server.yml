@@ -5,11 +5,11 @@ on:
     branches:
       - main
     paths:
-      - '.github/workflows/**'
+      - '.github/workflows/publish-server.yml'
       - 'tobeh.TypoImageGen.Server/**'
 
 env:
-  IMAGE_NAME: TypoImageGen
+  IMAGE_NAME: typoimagegen
   DOCKERFILE_PATH: ./tobeh.TypoImageGen.Server/.docker/Dockerfile
 
 jobs:
