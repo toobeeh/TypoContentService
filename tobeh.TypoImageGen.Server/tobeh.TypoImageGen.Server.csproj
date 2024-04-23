@@ -21,4 +21,10 @@
         <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.6.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include=".docker\docker-compose.yml" />
+      <Content Include=".docker\Dockerfile" />
+      <Content Include=".docker\entrypoint.sh" />
+    </ItemGroup>
+
 </Project>
