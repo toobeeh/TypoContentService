@@ -20,7 +20,8 @@ public class ComboImageGenerator(
     {
         logger.LogTrace("GenerateComboFromUrls(request={request})", request);
 
-        if (request.SpriteIds.Count == 0)
+        var spriteIds = request.SpriteIds.Where(id => id > 0).ToList();
+        if (spriteIds.Count == 0)
         {
             return
             [
@@ -31,7 +32,7 @@ public class ComboImageGenerator(
         var resultFileName = $"url-combo-{DateTimeOffset.UtcNow.ToUnixTimeSeconds()}";
 
         var allSprites = await spritesClient.GetAllSprites(new Empty()).ToDictionaryAsync(sprite => sprite.Id);
-        var combo = request.SpriteIds.Select(id => allSprites[id]).ToList();
+        var combo = spriteIds.Select(id => allSprites[id]).ToList();
         var colorMap = request.ColorMaps.ToDictionary(map => map.SpriteId, map => map.HueShift);
         
         var bytesTasks = combo.Select(async sprite => new {Bytes = await cachedFileProvider.GetBytesFromUrl(sprite.Url), Sprite = sprite});
