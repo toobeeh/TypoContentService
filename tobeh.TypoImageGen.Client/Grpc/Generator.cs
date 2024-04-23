@@ -24,35 +24,34 @@ namespace tobeh.TypoImageGen {
     static GeneratorReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg9nZW5lcmF0b3IucHJvdG8SCWdlbmVyYXRvciIyChxHZW5lcmF0ZUNvbWJv",
-            "RnJvbVVybHNNZXNzYWdlEhIKCnNvdXJjZVVybHMYASADKAkiWgoVR2VuZXJh",
-            "dGVkSW1hZ2VNZXNzYWdlEg0KBWNodW5rGAEgASgMEhIKCmNodW5rSW5kZXgY",
-            "AiABKAUSDAoEbmFtZRgDIAEoCRIQCghmaWxlVHlwZRgEIAEoCTJ2Cg5JbWFn",
-            "ZUdlbmVyYXRvchJkChVHZW5lcmF0ZUNvbWJvRnJvbVVybHMSJy5nZW5lcmF0",
-            "b3IuR2VuZXJhdGVDb21ib0Zyb21VcmxzTWVzc2FnZRogLmdlbmVyYXRvci5H",
-            "ZW5lcmF0ZWRJbWFnZU1lc3NhZ2UwAUIVqgISdG9iZWguVHlwb0ltYWdlR2Vu",
-            "YgZwcm90bzM="));
+            "Cg9nZW5lcmF0b3IucHJvdG8SCWdlbmVyYXRvciIpChRHZW5lcmF0ZUNvbWJv",
+            "TWVzc2FnZRIRCglzcHJpdGVJZHMYASADKAUiVQoQRmlsZUNodW5rTWVzc2Fn",
+            "ZRINCgVjaHVuaxgBIAEoDBISCgpjaHVua0luZGV4GAIgASgFEgwKBG5hbWUY",
+            "AyABKAkSEAoIZmlsZVR5cGUYBCABKAkyZwoOSW1hZ2VHZW5lcmF0b3ISVQoT",
+            "R2VuZXJhdGVTcHJpdGVDb21ibxIfLmdlbmVyYXRvci5HZW5lcmF0ZUNvbWJv",
+            "TWVzc2FnZRobLmdlbmVyYXRvci5GaWxlQ2h1bmtNZXNzYWdlMAFCFaoCEnRv",
+            "YmVoLlR5cG9JbWFnZUdlbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage), global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage.Parser, new[]{ "SourceUrls" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.GeneratedImageMessage), global::tobeh.TypoImageGen.GeneratedImageMessage.Parser, new[]{ "Chunk", "ChunkIndex", "Name", "FileType" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.GenerateComboMessage), global::tobeh.TypoImageGen.GenerateComboMessage.Parser, new[]{ "SpriteIds" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.FileChunkMessage), global::tobeh.TypoImageGen.FileChunkMessage.Parser, new[]{ "Chunk", "ChunkIndex", "Name", "FileType" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class GenerateComboFromUrlsMessage : pb::IMessage<GenerateComboFromUrlsMessage>
+  public sealed partial class GenerateComboMessage : pb::IMessage<GenerateComboMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<GenerateComboFromUrlsMessage> _parser = new pb::MessageParser<GenerateComboFromUrlsMessage>(() => new GenerateComboFromUrlsMessage());
+    private static readonly pb::MessageParser<GenerateComboMessage> _parser = new pb::MessageParser<GenerateComboMessage>(() => new GenerateComboMessage());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<GenerateComboFromUrlsMessage> Parser { get { return _parser; } }
+    public static pb::MessageParser<GenerateComboMessage> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -68,7 +67,7 @@ namespace tobeh.TypoImageGen {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GenerateComboFromUrlsMessage() {
+    public GenerateComboMessage() {
       OnConstruction();
     }
 
@@ -76,44 +75,44 @@ namespace tobeh.TypoImageGen {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GenerateComboFromUrlsMessage(GenerateComboFromUrlsMessage other) : this() {
-      sourceUrls_ = other.sourceUrls_.Clone();
+    public GenerateComboMessage(GenerateComboMessage other) : this() {
+      spriteIds_ = other.spriteIds_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GenerateComboFromUrlsMessage Clone() {
-      return new GenerateComboFromUrlsMessage(this);
+    public GenerateComboMessage Clone() {
+      return new GenerateComboMessage(this);
     }
 
-    /// <summary>Field number for the "sourceUrls" field.</summary>
-    public const int SourceUrlsFieldNumber = 1;
-    private static readonly pb::FieldCodec<string> _repeated_sourceUrls_codec
-        = pb::FieldCodec.ForString(10);
-    private readonly pbc::RepeatedField<string> sourceUrls_ = new pbc::RepeatedField<string>();
+    /// <summary>Field number for the "spriteIds" field.</summary>
+    public const int SpriteIdsFieldNumber = 1;
+    private static readonly pb::FieldCodec<int> _repeated_spriteIds_codec
+        = pb::FieldCodec.ForInt32(10);
+    private readonly pbc::RepeatedField<int> spriteIds_ = new pbc::RepeatedField<int>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> SourceUrls {
-      get { return sourceUrls_; }
+    public pbc::RepeatedField<int> SpriteIds {
+      get { return spriteIds_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as GenerateComboFromUrlsMessage);
+      return Equals(other as GenerateComboMessage);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(GenerateComboFromUrlsMessage other) {
+    public bool Equals(GenerateComboMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!sourceUrls_.Equals(other.sourceUrls_)) return false;
+      if(!spriteIds_.Equals(other.spriteIds_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -121,7 +120,7 @@ namespace tobeh.TypoImageGen {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= sourceUrls_.GetHashCode();
+      hash ^= spriteIds_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -140,7 +139,7 @@ namespace tobeh.TypoImageGen {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      sourceUrls_.WriteTo(output, _repeated_sourceUrls_codec);
+      spriteIds_.WriteTo(output, _repeated_spriteIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -151,7 +150,7 @@ namespace tobeh.TypoImageGen {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      sourceUrls_.WriteTo(ref output, _repeated_sourceUrls_codec);
+      spriteIds_.WriteTo(ref output, _repeated_spriteIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -162,7 +161,7 @@ namespace tobeh.TypoImageGen {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += sourceUrls_.CalculateSize(_repeated_sourceUrls_codec);
+      size += spriteIds_.CalculateSize(_repeated_spriteIds_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -171,11 +170,11 @@ namespace tobeh.TypoImageGen {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(GenerateComboFromUrlsMessage other) {
+    public void MergeFrom(GenerateComboMessage other) {
       if (other == null) {
         return;
       }
-      sourceUrls_.Add(other.sourceUrls_);
+      spriteIds_.Add(other.spriteIds_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -191,8 +190,9 @@ namespace tobeh.TypoImageGen {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            sourceUrls_.AddEntriesFrom(input, _repeated_sourceUrls_codec);
+          case 10:
+          case 8: {
+            spriteIds_.AddEntriesFrom(input, _repeated_spriteIds_codec);
             break;
           }
         }
@@ -210,8 +210,9 @@ namespace tobeh.TypoImageGen {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 10: {
-            sourceUrls_.AddEntriesFrom(ref input, _repeated_sourceUrls_codec);
+          case 10:
+          case 8: {
+            spriteIds_.AddEntriesFrom(ref input, _repeated_spriteIds_codec);
             break;
           }
         }
@@ -221,16 +222,16 @@ namespace tobeh.TypoImageGen {
 
   }
 
-  public sealed partial class GeneratedImageMessage : pb::IMessage<GeneratedImageMessage>
+  public sealed partial class FileChunkMessage : pb::IMessage<FileChunkMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<GeneratedImageMessage> _parser = new pb::MessageParser<GeneratedImageMessage>(() => new GeneratedImageMessage());
+    private static readonly pb::MessageParser<FileChunkMessage> _parser = new pb::MessageParser<FileChunkMessage>(() => new FileChunkMessage());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<GeneratedImageMessage> Parser { get { return _parser; } }
+    public static pb::MessageParser<FileChunkMessage> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -246,7 +247,7 @@ namespace tobeh.TypoImageGen {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GeneratedImageMessage() {
+    public FileChunkMessage() {
       OnConstruction();
     }
 
@@ -254,7 +255,7 @@ namespace tobeh.TypoImageGen {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GeneratedImageMessage(GeneratedImageMessage other) : this() {
+    public FileChunkMessage(FileChunkMessage other) : this() {
       chunk_ = other.chunk_;
       chunkIndex_ = other.chunkIndex_;
       name_ = other.name_;
@@ -264,8 +265,8 @@ namespace tobeh.TypoImageGen {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public GeneratedImageMessage Clone() {
-      return new GeneratedImageMessage(this);
+    public FileChunkMessage Clone() {
+      return new FileChunkMessage(this);
     }
 
     /// <summary>Field number for the "chunk" field.</summary>
@@ -319,12 +320,12 @@ namespace tobeh.TypoImageGen {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as GeneratedImageMessage);
+      return Equals(other as FileChunkMessage);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(GeneratedImageMessage other) {
+    public bool Equals(FileChunkMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -436,7 +437,7 @@ namespace tobeh.TypoImageGen {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(GeneratedImageMessage other) {
+    public void MergeFrom(FileChunkMessage other) {
       if (other == null) {
         return;
       }

@@ -1,20 +1,31 @@
 using Google.Protobuf;
+using Google.Protobuf.WellKnownTypes;
 using ImageMagick;
 using Microsoft.Extensions.Options;
 using tobeh.TypoImageGen;
 using tobeh.TypoImageGen.Server.Config;
+using tobeh.Valmar;
+using tobeh.Valmar.Client.Util;
 
 namespace tobeh.TypoImageGen.Server.Service;
 
-public class ComboImageGenerator(ILogger<ComboImageGenerator> logger, CachedFileProvider cachedFileProvider, IOptions<ImageGeneratorConfig> _options)
+public class ComboImageGenerator(
+    ILogger<ComboImageGenerator> logger, 
+    Sprites.SpritesClient spritesClient, 
+    CachedFileProvider cachedFileProvider, 
+    IOptions<ImageGeneratorConfig> _options
+)
 {
-    public async Task<List<GeneratedImageMessage>> GenerateComboFromUrls(GenerateComboFromUrlsMessage request)
+    public async Task<List<FileChunkMessage>> GenerateComboFromUrls(GenerateComboMessage request)
     {
         logger.LogTrace("GenerateComboFromUrls(request={request})", request);
         
         var resultFileName = $"url-combo-{DateTimeOffset.UtcNow.ToUnixTimeSeconds()}";
-     
-        var bytesTasks = request.SourceUrls.Select(url => cachedFileProvider.GetBytesFromUrl(url));
+
+        var allSprites = await spritesClient.GetAllSprites(new Empty()).ToDictionaryAsync(sprite => sprite.Id);
+        var combo = request.SpriteIds.Select(id => allSprites[id]).ToList();
+        
+        var bytesTasks = combo.Select(sprite => cachedFileProvider.GetBytesFromUrl(sprite.Url));
         var bytes = await Task.WhenAll(bytesTasks);
      
         IMagickImage? comboImage = null;
@@ -37,7 +48,7 @@ public class ComboImageGenerator(ILogger<ComboImageGenerator> logger, CachedFile
         var resultBytes = comboImage.ToByteArray();
         var byteChunks = resultBytes.Chunk(_options.Value.ByteChunkKByte * 1024);
      
-        var messages = byteChunks.Select((chunk, index) => new GeneratedImageMessage
+        var messages = byteChunks.Select((chunk, index) => new FileChunkMessage
         {
             ChunkIndex = index,
             Chunk = ByteString.CopyFrom(chunk),

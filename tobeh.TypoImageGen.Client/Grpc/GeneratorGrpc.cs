@@ -46,17 +46,17 @@ namespace tobeh.TypoImageGen {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage> __Marshaller_generator_GenerateComboFromUrlsMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage.Parser));
+    static readonly grpc::Marshaller<global::tobeh.TypoImageGen.GenerateComboMessage> __Marshaller_generator_GenerateComboMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::tobeh.TypoImageGen.GenerateComboMessage.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::tobeh.TypoImageGen.GeneratedImageMessage> __Marshaller_generator_GeneratedImageMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::tobeh.TypoImageGen.GeneratedImageMessage.Parser));
+    static readonly grpc::Marshaller<global::tobeh.TypoImageGen.FileChunkMessage> __Marshaller_generator_FileChunkMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::tobeh.TypoImageGen.FileChunkMessage.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage, global::tobeh.TypoImageGen.GeneratedImageMessage> __Method_GenerateComboFromUrls = new grpc::Method<global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage, global::tobeh.TypoImageGen.GeneratedImageMessage>(
+    static readonly grpc::Method<global::tobeh.TypoImageGen.GenerateComboMessage, global::tobeh.TypoImageGen.FileChunkMessage> __Method_GenerateSpriteCombo = new grpc::Method<global::tobeh.TypoImageGen.GenerateComboMessage, global::tobeh.TypoImageGen.FileChunkMessage>(
         grpc::MethodType.ServerStreaming,
         __ServiceName,
-        "GenerateComboFromUrls",
-        __Marshaller_generator_GenerateComboFromUrlsMessage,
-        __Marshaller_generator_GeneratedImageMessage);
+        "GenerateSpriteCombo",
+        __Marshaller_generator_GenerateComboMessage,
+        __Marshaller_generator_FileChunkMessage);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -100,9 +100,9 @@ namespace tobeh.TypoImageGen {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncServerStreamingCall<global::tobeh.TypoImageGen.GeneratedImageMessage> GenerateComboFromUrls(global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncServerStreamingCall<global::tobeh.TypoImageGen.FileChunkMessage> GenerateSpriteCombo(global::tobeh.TypoImageGen.GenerateComboMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return GenerateComboFromUrls(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return GenerateSpriteCombo(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
       /// Combine images to one
@@ -111,9 +111,9 @@ namespace tobeh.TypoImageGen {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncServerStreamingCall<global::tobeh.TypoImageGen.GeneratedImageMessage> GenerateComboFromUrls(global::tobeh.TypoImageGen.GenerateComboFromUrlsMessage request, grpc::CallOptions options)
+      public virtual grpc::AsyncServerStreamingCall<global::tobeh.TypoImageGen.FileChunkMessage> GenerateSpriteCombo(global::tobeh.TypoImageGen.GenerateComboMessage request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncServerStreamingCall(__Method_GenerateComboFromUrls, null, options, request);
+        return CallInvoker.AsyncServerStreamingCall(__Method_GenerateSpriteCombo, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]

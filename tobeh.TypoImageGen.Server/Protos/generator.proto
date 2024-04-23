@@ -7,13 +7,14 @@ package generator;
 service ImageGenerator {
   
   // Combine images to one
-  rpc GenerateComboFromUrls (GenerateComboFromUrlsMessage) returns (stream GeneratedImageMessage);
+  rpc GenerateSpriteCombo (GenerateComboMessage) returns (stream FileChunkMessage);
 }
 
-message GenerateComboFromUrlsMessage {
-  repeated string sourceUrls = 1;}
+message GenerateComboMessage {
+  repeated int32 spriteIds = 1;
+}
 
-message GeneratedImageMessage {
+message FileChunkMessage {
   bytes chunk = 1;
   int32 chunkIndex = 2;
   string name = 3;

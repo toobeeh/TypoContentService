@@ -1,6 +1,7 @@
 using tobeh.TypoImageGen.Server.Config;
 using tobeh.TypoImageGen.Server.Grpc;
 using tobeh.TypoImageGen.Server.Service;
+using tobeh.Valmar.Client.Util;
 
 namespace tobeh.TypoImageGen.Server;
 
@@ -14,6 +15,9 @@ public class Program
         builder.Services.AddGrpc();
         builder.Services.AddHttpClient();
         builder.Services.AddLogging();
+        builder.Services.AddValmarGrpc(
+            builder.Configuration.GetRequiredSection("Grpc").GetValue<string>("ValmarAddress") ??
+            throw new ArgumentException("No Valmar URL provided"));
         builder.Services.AddScoped<CachedFileProvider>();
         builder.Services.AddScoped<ComboImageGenerator>();
         builder.Services.Configure<ImageGeneratorConfig>(builder.Configuration.GetSection("ImageGenerator"));

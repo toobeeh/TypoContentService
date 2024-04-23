@@ -13,6 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Protobuf Update="../tobeh.TypoImageGen.Server/Protos/*.proto" />
         <Protobuf Include="../tobeh.TypoImageGen.Server/Protos/*.proto" GrpcServices="Client" ProtoRoot="../tobeh.TypoImageGen.Server/Protos">
             <Access>Public</Access>
             <ProtoCompile>True</ProtoCompile>
@@ -20,10 +21,6 @@
             <OutputDir>Grpc</OutputDir>
             <Generator>MSBuild:Compile</Generator>
         </Protobuf>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Grpc\" />
     </ItemGroup>
 
 </Project>

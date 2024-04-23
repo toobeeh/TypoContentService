@@ -8,10 +8,9 @@ public class ImageGeneratorService(
     ComboImageGenerator comboImageGenerator
 ) : ImageGenerator.ImageGeneratorBase
 {
-    public override async Task GenerateComboFromUrls(GenerateComboFromUrlsMessage request, IServerStreamWriter<GeneratedImageMessage> responseStream,
-        ServerCallContext context)
+    public override async Task GenerateSpriteCombo(GenerateComboMessage request, IServerStreamWriter<FileChunkMessage> responseStream, ServerCallContext context)
     {
-        logger.LogTrace("GenerateComboFromUrls(request={request})", request);
+        logger.LogTrace("GenerateSpriteCombo(request={request})", request);
 
         var chunks = await comboImageGenerator.GenerateComboFromUrls(request);
         foreach (var chunk in chunks)
