@@ -13,10 +13,10 @@ public class ComboImageGenerator(
     ILogger<ComboImageGenerator> logger, 
     Sprites.SpritesClient spritesClient, 
     CachedFileProvider cachedFileProvider, 
-    IOptions<ImageGeneratorConfig> _options
+    IOptions<ImageGeneratorConfig> options
 )
 {
-    public async Task<List<FileChunkMessage>> GenerateComboFromUrls(GenerateComboMessage request)
+    public async Task<List<FileChunkMessage>> GenerateComboFromSprites(GenerateComboMessage request)
     {
         logger.LogTrace("GenerateComboFromUrls(request={request})", request);
 
@@ -63,7 +63,7 @@ public class ComboImageGenerator(
         comboImage.Format = MagickFormat.Png;
      
         var resultBytes = comboImage.ToByteArray();
-        var byteChunks = resultBytes.Chunk(_options.Value.ByteChunkKByte * 1024);
+        var byteChunks = resultBytes.Chunk(options.Value.ByteChunkKByte * 1024);
      
         var messages = byteChunks.Select((chunk, index) => new FileChunkMessage
         {

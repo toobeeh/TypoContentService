@@ -27,17 +27,29 @@ namespace tobeh.TypoImageGen {
             "Cg9nZW5lcmF0b3IucHJvdG8SCWdlbmVyYXRvciI1Cg9Db2xvck1hcE1lc3Nh",
             "Z2USEAoIc3ByaXRlSWQYASABKAUSEAoIaHVlU2hpZnQYAyABKAUiWAoUR2Vu",
             "ZXJhdGVDb21ib01lc3NhZ2USEQoJc3ByaXRlSWRzGAEgAygFEi0KCWNvbG9y",
-            "TWFwcxgCIAMoCzIaLmdlbmVyYXRvci5Db2xvck1hcE1lc3NhZ2UiVQoQRmls",
-            "ZUNodW5rTWVzc2FnZRINCgVjaHVuaxgBIAEoDBISCgpjaHVua0luZGV4GAIg",
-            "ASgFEgwKBG5hbWUYAyABKAkSEAoIZmlsZVR5cGUYBCABKAkyZwoOSW1hZ2VH",
-            "ZW5lcmF0b3ISVQoTR2VuZXJhdGVTcHJpdGVDb21ibxIfLmdlbmVyYXRvci5H",
-            "ZW5lcmF0ZUNvbWJvTWVzc2FnZRobLmdlbmVyYXRvci5GaWxlQ2h1bmtNZXNz",
-            "YWdlMAFCFaoCEnRvYmVoLlR5cG9JbWFnZUdlbmIGcHJvdG8z"));
+            "TWFwcxgCIAMoCzIaLmdlbmVyYXRvci5Db2xvck1hcE1lc3NhZ2UigAMKE0dl",
+            "bmVyYXRlQ2FyZE1lc3NhZ2USGgoSc2V0dGluZ3NPd25lckxvZ2luGAEgASgF",
+            "EhcKD3Byb2ZpbGVJbWFnZVVybBgCIAEoCRIuCgVjb21ibxgDIAEoCzIfLmdl",
+            "bmVyYXRvci5HZW5lcmF0ZUNvbWJvTWVzc2FnZRIQCgh1c2VybmFtZRgEIAEo",
+            "CRIPCgdidWJibGVzGAUgASgFEg0KBWRyb3BzGAYgASgFEhEKCWRyb3BSYXRp",
+            "bxgHIAEoARIRCglmaXJzdFNlZW4YCCABKAkSFAoMc3ByaXRlc0NvdW50GAkg",
+            "ASgFEhoKEmV2ZW50c1BhcnRpY2lwYXRlZBgKIAEoBRISCgpidWJibGVSYW5r",
+            "GAsgASgFEhAKCGRyb3BSYW5rGAwgASgFEhgKEHNlcnZlcnNDb25uZWN0ZWQY",
+            "DSABKAUSEAoIaXNQYXRyb24YDiABKAgSEwoLaXNFYXJseVVzZXIYDyABKAgS",
+            "EwoLaXNNb2RlcmF0b3IYECABKAgiVQoQRmlsZUNodW5rTWVzc2FnZRINCgVj",
+            "aHVuaxgBIAEoDBISCgpjaHVua0luZGV4GAIgASgFEgwKBG5hbWUYAyABKAkS",
+            "EAoIZmlsZVR5cGUYBCABKAkytgEKDkltYWdlR2VuZXJhdG9yElUKE0dlbmVy",
+            "YXRlU3ByaXRlQ29tYm8SHy5nZW5lcmF0b3IuR2VuZXJhdGVDb21ib01lc3Nh",
+            "Z2UaGy5nZW5lcmF0b3IuRmlsZUNodW5rTWVzc2FnZTABEk0KDEdlbmVyYXRl",
+            "Q2FyZBIeLmdlbmVyYXRvci5HZW5lcmF0ZUNhcmRNZXNzYWdlGhsuZ2VuZXJh",
+            "dG9yLkZpbGVDaHVua01lc3NhZ2UwAUIVqgISdG9iZWguVHlwb0ltYWdlR2Vu",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.ColorMapMessage), global::tobeh.TypoImageGen.ColorMapMessage.Parser, new[]{ "SpriteId", "HueShift" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.GenerateComboMessage), global::tobeh.TypoImageGen.GenerateComboMessage.Parser, new[]{ "SpriteIds", "ColorMaps" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.GenerateCardMessage), global::tobeh.TypoImageGen.GenerateCardMessage.Parser, new[]{ "SettingsOwnerLogin", "ProfileImageUrl", "Combo", "Username", "Bubbles", "Drops", "DropRatio", "FirstSeen", "SpritesCount", "EventsParticipated", "BubbleRank", "DropRank", "ServersConnected", "IsPatron", "IsEarlyUser", "IsModerator" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.FileChunkMessage), global::tobeh.TypoImageGen.FileChunkMessage.Parser, new[]{ "Chunk", "ChunkIndex", "Name", "FileType" }, null, null, null, null)
           }));
     }
@@ -477,6 +489,759 @@ namespace tobeh.TypoImageGen {
 
   }
 
+  public sealed partial class GenerateCardMessage : pb::IMessage<GenerateCardMessage>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GenerateCardMessage> _parser = new pb::MessageParser<GenerateCardMessage>(() => new GenerateCardMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GenerateCardMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::tobeh.TypoImageGen.GeneratorReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GenerateCardMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GenerateCardMessage(GenerateCardMessage other) : this() {
+      settingsOwnerLogin_ = other.settingsOwnerLogin_;
+      profileImageUrl_ = other.profileImageUrl_;
+      combo_ = other.combo_ != null ? other.combo_.Clone() : null;
+      username_ = other.username_;
+      bubbles_ = other.bubbles_;
+      drops_ = other.drops_;
+      dropRatio_ = other.dropRatio_;
+      firstSeen_ = other.firstSeen_;
+      spritesCount_ = other.spritesCount_;
+      eventsParticipated_ = other.eventsParticipated_;
+      bubbleRank_ = other.bubbleRank_;
+      dropRank_ = other.dropRank_;
+      serversConnected_ = other.serversConnected_;
+      isPatron_ = other.isPatron_;
+      isEarlyUser_ = other.isEarlyUser_;
+      isModerator_ = other.isModerator_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GenerateCardMessage Clone() {
+      return new GenerateCardMessage(this);
+    }
+
+    /// <summary>Field number for the "settingsOwnerLogin" field.</summary>
+    public const int SettingsOwnerLoginFieldNumber = 1;
+    private int settingsOwnerLogin_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int SettingsOwnerLogin {
+      get { return settingsOwnerLogin_; }
+      set {
+        settingsOwnerLogin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "profileImageUrl" field.</summary>
+    public const int ProfileImageUrlFieldNumber = 2;
+    private string profileImageUrl_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ProfileImageUrl {
+      get { return profileImageUrl_; }
+      set {
+        profileImageUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "combo" field.</summary>
+    public const int ComboFieldNumber = 3;
+    private global::tobeh.TypoImageGen.GenerateComboMessage combo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::tobeh.TypoImageGen.GenerateComboMessage Combo {
+      get { return combo_; }
+      set {
+        combo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "username" field.</summary>
+    public const int UsernameFieldNumber = 4;
+    private string username_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Username {
+      get { return username_; }
+      set {
+        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "bubbles" field.</summary>
+    public const int BubblesFieldNumber = 5;
+    private int bubbles_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Bubbles {
+      get { return bubbles_; }
+      set {
+        bubbles_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "drops" field.</summary>
+    public const int DropsFieldNumber = 6;
+    private int drops_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Drops {
+      get { return drops_; }
+      set {
+        drops_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dropRatio" field.</summary>
+    public const int DropRatioFieldNumber = 7;
+    private double dropRatio_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public double DropRatio {
+      get { return dropRatio_; }
+      set {
+        dropRatio_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "firstSeen" field.</summary>
+    public const int FirstSeenFieldNumber = 8;
+    private string firstSeen_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string FirstSeen {
+      get { return firstSeen_; }
+      set {
+        firstSeen_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "spritesCount" field.</summary>
+    public const int SpritesCountFieldNumber = 9;
+    private int spritesCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int SpritesCount {
+      get { return spritesCount_; }
+      set {
+        spritesCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "eventsParticipated" field.</summary>
+    public const int EventsParticipatedFieldNumber = 10;
+    private int eventsParticipated_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int EventsParticipated {
+      get { return eventsParticipated_; }
+      set {
+        eventsParticipated_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "bubbleRank" field.</summary>
+    public const int BubbleRankFieldNumber = 11;
+    private int bubbleRank_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int BubbleRank {
+      get { return bubbleRank_; }
+      set {
+        bubbleRank_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dropRank" field.</summary>
+    public const int DropRankFieldNumber = 12;
+    private int dropRank_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int DropRank {
+      get { return dropRank_; }
+      set {
+        dropRank_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "serversConnected" field.</summary>
+    public const int ServersConnectedFieldNumber = 13;
+    private int serversConnected_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int ServersConnected {
+      get { return serversConnected_; }
+      set {
+        serversConnected_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "isPatron" field.</summary>
+    public const int IsPatronFieldNumber = 14;
+    private bool isPatron_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsPatron {
+      get { return isPatron_; }
+      set {
+        isPatron_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "isEarlyUser" field.</summary>
+    public const int IsEarlyUserFieldNumber = 15;
+    private bool isEarlyUser_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsEarlyUser {
+      get { return isEarlyUser_; }
+      set {
+        isEarlyUser_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "isModerator" field.</summary>
+    public const int IsModeratorFieldNumber = 16;
+    private bool isModerator_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsModerator {
+      get { return isModerator_; }
+      set {
+        isModerator_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GenerateCardMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GenerateCardMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (SettingsOwnerLogin != other.SettingsOwnerLogin) return false;
+      if (ProfileImageUrl != other.ProfileImageUrl) return false;
+      if (!object.Equals(Combo, other.Combo)) return false;
+      if (Username != other.Username) return false;
+      if (Bubbles != other.Bubbles) return false;
+      if (Drops != other.Drops) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(DropRatio, other.DropRatio)) return false;
+      if (FirstSeen != other.FirstSeen) return false;
+      if (SpritesCount != other.SpritesCount) return false;
+      if (EventsParticipated != other.EventsParticipated) return false;
+      if (BubbleRank != other.BubbleRank) return false;
+      if (DropRank != other.DropRank) return false;
+      if (ServersConnected != other.ServersConnected) return false;
+      if (IsPatron != other.IsPatron) return false;
+      if (IsEarlyUser != other.IsEarlyUser) return false;
+      if (IsModerator != other.IsModerator) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (SettingsOwnerLogin != 0) hash ^= SettingsOwnerLogin.GetHashCode();
+      if (ProfileImageUrl.Length != 0) hash ^= ProfileImageUrl.GetHashCode();
+      if (combo_ != null) hash ^= Combo.GetHashCode();
+      if (Username.Length != 0) hash ^= Username.GetHashCode();
+      if (Bubbles != 0) hash ^= Bubbles.GetHashCode();
+      if (Drops != 0) hash ^= Drops.GetHashCode();
+      if (DropRatio != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(DropRatio);
+      if (FirstSeen.Length != 0) hash ^= FirstSeen.GetHashCode();
+      if (SpritesCount != 0) hash ^= SpritesCount.GetHashCode();
+      if (EventsParticipated != 0) hash ^= EventsParticipated.GetHashCode();
+      if (BubbleRank != 0) hash ^= BubbleRank.GetHashCode();
+      if (DropRank != 0) hash ^= DropRank.GetHashCode();
+      if (ServersConnected != 0) hash ^= ServersConnected.GetHashCode();
+      if (IsPatron != false) hash ^= IsPatron.GetHashCode();
+      if (IsEarlyUser != false) hash ^= IsEarlyUser.GetHashCode();
+      if (IsModerator != false) hash ^= IsModerator.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (SettingsOwnerLogin != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(SettingsOwnerLogin);
+      }
+      if (ProfileImageUrl.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ProfileImageUrl);
+      }
+      if (combo_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Combo);
+      }
+      if (Username.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Username);
+      }
+      if (Bubbles != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Bubbles);
+      }
+      if (Drops != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Drops);
+      }
+      if (DropRatio != 0D) {
+        output.WriteRawTag(57);
+        output.WriteDouble(DropRatio);
+      }
+      if (FirstSeen.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(FirstSeen);
+      }
+      if (SpritesCount != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(SpritesCount);
+      }
+      if (EventsParticipated != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(EventsParticipated);
+      }
+      if (BubbleRank != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(BubbleRank);
+      }
+      if (DropRank != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(DropRank);
+      }
+      if (ServersConnected != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(ServersConnected);
+      }
+      if (IsPatron != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsPatron);
+      }
+      if (IsEarlyUser != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsEarlyUser);
+      }
+      if (IsModerator != false) {
+        output.WriteRawTag(128, 1);
+        output.WriteBool(IsModerator);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (SettingsOwnerLogin != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(SettingsOwnerLogin);
+      }
+      if (ProfileImageUrl.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ProfileImageUrl);
+      }
+      if (combo_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Combo);
+      }
+      if (Username.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Username);
+      }
+      if (Bubbles != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Bubbles);
+      }
+      if (Drops != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Drops);
+      }
+      if (DropRatio != 0D) {
+        output.WriteRawTag(57);
+        output.WriteDouble(DropRatio);
+      }
+      if (FirstSeen.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(FirstSeen);
+      }
+      if (SpritesCount != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(SpritesCount);
+      }
+      if (EventsParticipated != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(EventsParticipated);
+      }
+      if (BubbleRank != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(BubbleRank);
+      }
+      if (DropRank != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(DropRank);
+      }
+      if (ServersConnected != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(ServersConnected);
+      }
+      if (IsPatron != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsPatron);
+      }
+      if (IsEarlyUser != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsEarlyUser);
+      }
+      if (IsModerator != false) {
+        output.WriteRawTag(128, 1);
+        output.WriteBool(IsModerator);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (SettingsOwnerLogin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SettingsOwnerLogin);
+      }
+      if (ProfileImageUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProfileImageUrl);
+      }
+      if (combo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Combo);
+      }
+      if (Username.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      if (Bubbles != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Bubbles);
+      }
+      if (Drops != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Drops);
+      }
+      if (DropRatio != 0D) {
+        size += 1 + 8;
+      }
+      if (FirstSeen.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FirstSeen);
+      }
+      if (SpritesCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SpritesCount);
+      }
+      if (EventsParticipated != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(EventsParticipated);
+      }
+      if (BubbleRank != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(BubbleRank);
+      }
+      if (DropRank != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(DropRank);
+      }
+      if (ServersConnected != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(ServersConnected);
+      }
+      if (IsPatron != false) {
+        size += 1 + 1;
+      }
+      if (IsEarlyUser != false) {
+        size += 1 + 1;
+      }
+      if (IsModerator != false) {
+        size += 2 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GenerateCardMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.SettingsOwnerLogin != 0) {
+        SettingsOwnerLogin = other.SettingsOwnerLogin;
+      }
+      if (other.ProfileImageUrl.Length != 0) {
+        ProfileImageUrl = other.ProfileImageUrl;
+      }
+      if (other.combo_ != null) {
+        if (combo_ == null) {
+          Combo = new global::tobeh.TypoImageGen.GenerateComboMessage();
+        }
+        Combo.MergeFrom(other.Combo);
+      }
+      if (other.Username.Length != 0) {
+        Username = other.Username;
+      }
+      if (other.Bubbles != 0) {
+        Bubbles = other.Bubbles;
+      }
+      if (other.Drops != 0) {
+        Drops = other.Drops;
+      }
+      if (other.DropRatio != 0D) {
+        DropRatio = other.DropRatio;
+      }
+      if (other.FirstSeen.Length != 0) {
+        FirstSeen = other.FirstSeen;
+      }
+      if (other.SpritesCount != 0) {
+        SpritesCount = other.SpritesCount;
+      }
+      if (other.EventsParticipated != 0) {
+        EventsParticipated = other.EventsParticipated;
+      }
+      if (other.BubbleRank != 0) {
+        BubbleRank = other.BubbleRank;
+      }
+      if (other.DropRank != 0) {
+        DropRank = other.DropRank;
+      }
+      if (other.ServersConnected != 0) {
+        ServersConnected = other.ServersConnected;
+      }
+      if (other.IsPatron != false) {
+        IsPatron = other.IsPatron;
+      }
+      if (other.IsEarlyUser != false) {
+        IsEarlyUser = other.IsEarlyUser;
+      }
+      if (other.IsModerator != false) {
+        IsModerator = other.IsModerator;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            SettingsOwnerLogin = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            ProfileImageUrl = input.ReadString();
+            break;
+          }
+          case 26: {
+            if (combo_ == null) {
+              Combo = new global::tobeh.TypoImageGen.GenerateComboMessage();
+            }
+            input.ReadMessage(Combo);
+            break;
+          }
+          case 34: {
+            Username = input.ReadString();
+            break;
+          }
+          case 40: {
+            Bubbles = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            Drops = input.ReadInt32();
+            break;
+          }
+          case 57: {
+            DropRatio = input.ReadDouble();
+            break;
+          }
+          case 66: {
+            FirstSeen = input.ReadString();
+            break;
+          }
+          case 72: {
+            SpritesCount = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            EventsParticipated = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            BubbleRank = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            DropRank = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            ServersConnected = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            IsPatron = input.ReadBool();
+            break;
+          }
+          case 120: {
+            IsEarlyUser = input.ReadBool();
+            break;
+          }
+          case 128: {
+            IsModerator = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            SettingsOwnerLogin = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            ProfileImageUrl = input.ReadString();
+            break;
+          }
+          case 26: {
+            if (combo_ == null) {
+              Combo = new global::tobeh.TypoImageGen.GenerateComboMessage();
+            }
+            input.ReadMessage(Combo);
+            break;
+          }
+          case 34: {
+            Username = input.ReadString();
+            break;
+          }
+          case 40: {
+            Bubbles = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            Drops = input.ReadInt32();
+            break;
+          }
+          case 57: {
+            DropRatio = input.ReadDouble();
+            break;
+          }
+          case 66: {
+            FirstSeen = input.ReadString();
+            break;
+          }
+          case 72: {
+            SpritesCount = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            EventsParticipated = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            BubbleRank = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            DropRank = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            ServersConnected = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            IsPatron = input.ReadBool();
+            break;
+          }
+          case 120: {
+            IsEarlyUser = input.ReadBool();
+            break;
+          }
+          case 128: {
+            IsModerator = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class FileChunkMessage : pb::IMessage<FileChunkMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -491,7 +1256,7 @@ namespace tobeh.TypoImageGen {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::tobeh.TypoImageGen.GeneratorReflection.Descriptor.MessageTypes[2]; }
+      get { return global::tobeh.TypoImageGen.GeneratorReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

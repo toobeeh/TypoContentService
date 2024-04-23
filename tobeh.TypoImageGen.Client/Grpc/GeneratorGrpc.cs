@@ -49,6 +49,8 @@ namespace tobeh.TypoImageGen {
     static readonly grpc::Marshaller<global::tobeh.TypoImageGen.GenerateComboMessage> __Marshaller_generator_GenerateComboMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::tobeh.TypoImageGen.GenerateComboMessage.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::tobeh.TypoImageGen.FileChunkMessage> __Marshaller_generator_FileChunkMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::tobeh.TypoImageGen.FileChunkMessage.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::tobeh.TypoImageGen.GenerateCardMessage> __Marshaller_generator_GenerateCardMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::tobeh.TypoImageGen.GenerateCardMessage.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::tobeh.TypoImageGen.GenerateComboMessage, global::tobeh.TypoImageGen.FileChunkMessage> __Method_GenerateSpriteCombo = new grpc::Method<global::tobeh.TypoImageGen.GenerateComboMessage, global::tobeh.TypoImageGen.FileChunkMessage>(
@@ -56,6 +58,14 @@ namespace tobeh.TypoImageGen {
         __ServiceName,
         "GenerateSpriteCombo",
         __Marshaller_generator_GenerateComboMessage,
+        __Marshaller_generator_FileChunkMessage);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::tobeh.TypoImageGen.GenerateCardMessage, global::tobeh.TypoImageGen.FileChunkMessage> __Method_GenerateCard = new grpc::Method<global::tobeh.TypoImageGen.GenerateCardMessage, global::tobeh.TypoImageGen.FileChunkMessage>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "GenerateCard",
+        __Marshaller_generator_GenerateCardMessage,
         __Marshaller_generator_FileChunkMessage);
 
     /// <summary>Service descriptor</summary>
@@ -92,7 +102,7 @@ namespace tobeh.TypoImageGen {
       }
 
       /// <summary>
-      /// Combine images to one
+      /// Generate a image that combines the first frames of all sprites in the combo
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -105,7 +115,7 @@ namespace tobeh.TypoImageGen {
         return GenerateSpriteCombo(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Combine images to one
+      /// Generate a image that combines the first frames of all sprites in the combo
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -114,6 +124,30 @@ namespace tobeh.TypoImageGen {
       public virtual grpc::AsyncServerStreamingCall<global::tobeh.TypoImageGen.FileChunkMessage> GenerateSpriteCombo(global::tobeh.TypoImageGen.GenerateComboMessage request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_GenerateSpriteCombo, null, options, request);
+      }
+      /// <summary>
+      /// Generate a card image for a user
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncServerStreamingCall<global::tobeh.TypoImageGen.FileChunkMessage> GenerateCard(global::tobeh.TypoImageGen.GenerateCardMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GenerateCard(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Generate a card image for a user
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncServerStreamingCall<global::tobeh.TypoImageGen.FileChunkMessage> GenerateCard(global::tobeh.TypoImageGen.GenerateCardMessage request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_GenerateCard, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
