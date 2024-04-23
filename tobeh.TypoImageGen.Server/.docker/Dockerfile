@@ -13,7 +13,7 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["tobeh.TypoImageGen.Server.csproj", "tobeh.TypoImageGen.Server/"]
 RUN dotnet restore "tobeh.TypoImageGen.Server/tobeh.TypoImageGen.Server.csproj"
-COPY . ./tobeh.Valmar.Server
+COPY . ./tobeh.TypoImageGen.Server
 WORKDIR "/src/tobeh.TypoImageGen.Server"
 #RUN ls -lR
 RUN dotnet build "tobeh.TypoImageGen.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build
