@@ -61,7 +61,7 @@ public class CardImageGenerator(
             .Replace("$dropratio$", $" {request.DropRatio :0.#}: {GetRatioName(request.DropRatio)}")
             .Replace("$firstseen$", request.FirstSeen)
             .Replace("$sprites$", $" {request.SpritesCount} bought")
-            .Replace("$events$", request.EventsParticipated.ToString())
+            .Replace("$events$",  $"{request.EventsParticipated} ({request.EventsDropValue} drops)")
             .Replace("$hours$", $" {request.Bubbles / 6 / 60 :0} hours")
             .Replace("$brank$", $" #{request.BubbleRank}")
             .Replace("$drank$", $" #{request.DropRank}")
@@ -77,7 +77,7 @@ public class CardImageGenerator(
 
         var svgImage = SKSvg.CreateFromSvg(svgCode);
         
-        File.WriteAllText("card.svg", svgCode);
+        //File.WriteAllText("card.svg", svgCode);
         
         var svgStream = new MemoryStream();
         svgImage.Save(svgStream, SKColor.Empty, SKEncodedImageFormat.Png, 200, 3, 3);

@@ -27,29 +27,29 @@ namespace tobeh.TypoImageGen {
             "Cg9nZW5lcmF0b3IucHJvdG8SCWdlbmVyYXRvciI1Cg9Db2xvck1hcE1lc3Nh",
             "Z2USEAoIc3ByaXRlSWQYASABKAUSEAoIaHVlU2hpZnQYAyABKAUiWAoUR2Vu",
             "ZXJhdGVDb21ib01lc3NhZ2USEQoJc3ByaXRlSWRzGAEgAygFEi0KCWNvbG9y",
-            "TWFwcxgCIAMoCzIaLmdlbmVyYXRvci5Db2xvck1hcE1lc3NhZ2UigAMKE0dl",
+            "TWFwcxgCIAMoCzIaLmdlbmVyYXRvci5Db2xvck1hcE1lc3NhZ2UimQMKE0dl",
             "bmVyYXRlQ2FyZE1lc3NhZ2USGgoSc2V0dGluZ3NPd25lckxvZ2luGAEgASgF",
             "EhcKD3Byb2ZpbGVJbWFnZVVybBgCIAEoCRIuCgVjb21ibxgDIAEoCzIfLmdl",
             "bmVyYXRvci5HZW5lcmF0ZUNvbWJvTWVzc2FnZRIQCgh1c2VybmFtZRgEIAEo",
             "CRIPCgdidWJibGVzGAUgASgFEg0KBWRyb3BzGAYgASgFEhEKCWRyb3BSYXRp",
             "bxgHIAEoARIRCglmaXJzdFNlZW4YCCABKAkSFAoMc3ByaXRlc0NvdW50GAkg",
-            "ASgFEhoKEmV2ZW50c1BhcnRpY2lwYXRlZBgKIAEoBRISCgpidWJibGVSYW5r",
-            "GAsgASgFEhAKCGRyb3BSYW5rGAwgASgFEhgKEHNlcnZlcnNDb25uZWN0ZWQY",
-            "DSABKAUSEAoIaXNQYXRyb24YDiABKAgSEwoLaXNFYXJseVVzZXIYDyABKAgS",
-            "EwoLaXNNb2RlcmF0b3IYECABKAgiVQoQRmlsZUNodW5rTWVzc2FnZRINCgVj",
-            "aHVuaxgBIAEoDBISCgpjaHVua0luZGV4GAIgASgFEgwKBG5hbWUYAyABKAkS",
-            "EAoIZmlsZVR5cGUYBCABKAkytgEKDkltYWdlR2VuZXJhdG9yElUKE0dlbmVy",
-            "YXRlU3ByaXRlQ29tYm8SHy5nZW5lcmF0b3IuR2VuZXJhdGVDb21ib01lc3Nh",
-            "Z2UaGy5nZW5lcmF0b3IuRmlsZUNodW5rTWVzc2FnZTABEk0KDEdlbmVyYXRl",
-            "Q2FyZBIeLmdlbmVyYXRvci5HZW5lcmF0ZUNhcmRNZXNzYWdlGhsuZ2VuZXJh",
-            "dG9yLkZpbGVDaHVua01lc3NhZ2UwAUIVqgISdG9iZWguVHlwb0ltYWdlR2Vu",
-            "YgZwcm90bzM="));
+            "ASgFEhoKEmV2ZW50c1BhcnRpY2lwYXRlZBgKIAEoBRIXCg9ldmVudHNEcm9w",
+            "VmFsdWUYCyABKAUSEgoKYnViYmxlUmFuaxgMIAEoBRIQCghkcm9wUmFuaxgN",
+            "IAEoBRIYChBzZXJ2ZXJzQ29ubmVjdGVkGA4gASgFEhAKCGlzUGF0cm9uGA8g",
+            "ASgIEhMKC2lzRWFybHlVc2VyGBAgASgIEhMKC2lzTW9kZXJhdG9yGBEgASgI",
+            "IlUKEEZpbGVDaHVua01lc3NhZ2USDQoFY2h1bmsYASABKAwSEgoKY2h1bmtJ",
+            "bmRleBgCIAEoBRIMCgRuYW1lGAMgASgJEhAKCGZpbGVUeXBlGAQgASgJMrYB",
+            "Cg5JbWFnZUdlbmVyYXRvchJVChNHZW5lcmF0ZVNwcml0ZUNvbWJvEh8uZ2Vu",
+            "ZXJhdG9yLkdlbmVyYXRlQ29tYm9NZXNzYWdlGhsuZ2VuZXJhdG9yLkZpbGVD",
+            "aHVua01lc3NhZ2UwARJNCgxHZW5lcmF0ZUNhcmQSHi5nZW5lcmF0b3IuR2Vu",
+            "ZXJhdGVDYXJkTWVzc2FnZRobLmdlbmVyYXRvci5GaWxlQ2h1bmtNZXNzYWdl",
+            "MAFCFaoCEnRvYmVoLlR5cG9JbWFnZUdlbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.ColorMapMessage), global::tobeh.TypoImageGen.ColorMapMessage.Parser, new[]{ "SpriteId", "HueShift" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.GenerateComboMessage), global::tobeh.TypoImageGen.GenerateComboMessage.Parser, new[]{ "SpriteIds", "ColorMaps" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.GenerateCardMessage), global::tobeh.TypoImageGen.GenerateCardMessage.Parser, new[]{ "SettingsOwnerLogin", "ProfileImageUrl", "Combo", "Username", "Bubbles", "Drops", "DropRatio", "FirstSeen", "SpritesCount", "EventsParticipated", "BubbleRank", "DropRank", "ServersConnected", "IsPatron", "IsEarlyUser", "IsModerator" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.GenerateCardMessage), global::tobeh.TypoImageGen.GenerateCardMessage.Parser, new[]{ "SettingsOwnerLogin", "ProfileImageUrl", "Combo", "Username", "Bubbles", "Drops", "DropRatio", "FirstSeen", "SpritesCount", "EventsParticipated", "EventsDropValue", "BubbleRank", "DropRank", "ServersConnected", "IsPatron", "IsEarlyUser", "IsModerator" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoImageGen.FileChunkMessage), global::tobeh.TypoImageGen.FileChunkMessage.Parser, new[]{ "Chunk", "ChunkIndex", "Name", "FileType" }, null, null, null, null)
           }));
     }
@@ -533,6 +533,7 @@ namespace tobeh.TypoImageGen {
       firstSeen_ = other.firstSeen_;
       spritesCount_ = other.spritesCount_;
       eventsParticipated_ = other.eventsParticipated_;
+      eventsDropValue_ = other.eventsDropValue_;
       bubbleRank_ = other.bubbleRank_;
       dropRank_ = other.dropRank_;
       serversConnected_ = other.serversConnected_;
@@ -668,8 +669,20 @@ namespace tobeh.TypoImageGen {
       }
     }
 
+    /// <summary>Field number for the "eventsDropValue" field.</summary>
+    public const int EventsDropValueFieldNumber = 11;
+    private int eventsDropValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int EventsDropValue {
+      get { return eventsDropValue_; }
+      set {
+        eventsDropValue_ = value;
+      }
+    }
+
     /// <summary>Field number for the "bubbleRank" field.</summary>
-    public const int BubbleRankFieldNumber = 11;
+    public const int BubbleRankFieldNumber = 12;
     private int bubbleRank_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -681,7 +694,7 @@ namespace tobeh.TypoImageGen {
     }
 
     /// <summary>Field number for the "dropRank" field.</summary>
-    public const int DropRankFieldNumber = 12;
+    public const int DropRankFieldNumber = 13;
     private int dropRank_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -693,7 +706,7 @@ namespace tobeh.TypoImageGen {
     }
 
     /// <summary>Field number for the "serversConnected" field.</summary>
-    public const int ServersConnectedFieldNumber = 13;
+    public const int ServersConnectedFieldNumber = 14;
     private int serversConnected_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -705,7 +718,7 @@ namespace tobeh.TypoImageGen {
     }
 
     /// <summary>Field number for the "isPatron" field.</summary>
-    public const int IsPatronFieldNumber = 14;
+    public const int IsPatronFieldNumber = 15;
     private bool isPatron_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -717,7 +730,7 @@ namespace tobeh.TypoImageGen {
     }
 
     /// <summary>Field number for the "isEarlyUser" field.</summary>
-    public const int IsEarlyUserFieldNumber = 15;
+    public const int IsEarlyUserFieldNumber = 16;
     private bool isEarlyUser_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -729,7 +742,7 @@ namespace tobeh.TypoImageGen {
     }
 
     /// <summary>Field number for the "isModerator" field.</summary>
-    public const int IsModeratorFieldNumber = 16;
+    public const int IsModeratorFieldNumber = 17;
     private bool isModerator_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -765,6 +778,7 @@ namespace tobeh.TypoImageGen {
       if (FirstSeen != other.FirstSeen) return false;
       if (SpritesCount != other.SpritesCount) return false;
       if (EventsParticipated != other.EventsParticipated) return false;
+      if (EventsDropValue != other.EventsDropValue) return false;
       if (BubbleRank != other.BubbleRank) return false;
       if (DropRank != other.DropRank) return false;
       if (ServersConnected != other.ServersConnected) return false;
@@ -788,6 +802,7 @@ namespace tobeh.TypoImageGen {
       if (FirstSeen.Length != 0) hash ^= FirstSeen.GetHashCode();
       if (SpritesCount != 0) hash ^= SpritesCount.GetHashCode();
       if (EventsParticipated != 0) hash ^= EventsParticipated.GetHashCode();
+      if (EventsDropValue != 0) hash ^= EventsDropValue.GetHashCode();
       if (BubbleRank != 0) hash ^= BubbleRank.GetHashCode();
       if (DropRank != 0) hash ^= DropRank.GetHashCode();
       if (ServersConnected != 0) hash ^= ServersConnected.GetHashCode();
@@ -852,28 +867,32 @@ namespace tobeh.TypoImageGen {
         output.WriteRawTag(80);
         output.WriteInt32(EventsParticipated);
       }
-      if (BubbleRank != 0) {
+      if (EventsDropValue != 0) {
         output.WriteRawTag(88);
+        output.WriteInt32(EventsDropValue);
+      }
+      if (BubbleRank != 0) {
+        output.WriteRawTag(96);
         output.WriteInt32(BubbleRank);
       }
       if (DropRank != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(104);
         output.WriteInt32(DropRank);
       }
       if (ServersConnected != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(112);
         output.WriteInt32(ServersConnected);
       }
       if (IsPatron != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(120);
         output.WriteBool(IsPatron);
       }
       if (IsEarlyUser != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(128, 1);
         output.WriteBool(IsEarlyUser);
       }
       if (IsModerator != false) {
-        output.WriteRawTag(128, 1);
+        output.WriteRawTag(136, 1);
         output.WriteBool(IsModerator);
       }
       if (_unknownFields != null) {
@@ -926,28 +945,32 @@ namespace tobeh.TypoImageGen {
         output.WriteRawTag(80);
         output.WriteInt32(EventsParticipated);
       }
-      if (BubbleRank != 0) {
+      if (EventsDropValue != 0) {
         output.WriteRawTag(88);
+        output.WriteInt32(EventsDropValue);
+      }
+      if (BubbleRank != 0) {
+        output.WriteRawTag(96);
         output.WriteInt32(BubbleRank);
       }
       if (DropRank != 0) {
-        output.WriteRawTag(96);
+        output.WriteRawTag(104);
         output.WriteInt32(DropRank);
       }
       if (ServersConnected != 0) {
-        output.WriteRawTag(104);
+        output.WriteRawTag(112);
         output.WriteInt32(ServersConnected);
       }
       if (IsPatron != false) {
-        output.WriteRawTag(112);
+        output.WriteRawTag(120);
         output.WriteBool(IsPatron);
       }
       if (IsEarlyUser != false) {
-        output.WriteRawTag(120);
+        output.WriteRawTag(128, 1);
         output.WriteBool(IsEarlyUser);
       }
       if (IsModerator != false) {
-        output.WriteRawTag(128, 1);
+        output.WriteRawTag(136, 1);
         output.WriteBool(IsModerator);
       }
       if (_unknownFields != null) {
@@ -990,6 +1013,9 @@ namespace tobeh.TypoImageGen {
       if (EventsParticipated != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(EventsParticipated);
       }
+      if (EventsDropValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(EventsDropValue);
+      }
       if (BubbleRank != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(BubbleRank);
       }
@@ -1003,7 +1029,7 @@ namespace tobeh.TypoImageGen {
         size += 1 + 1;
       }
       if (IsEarlyUser != false) {
-        size += 1 + 1;
+        size += 2 + 1;
       }
       if (IsModerator != false) {
         size += 2 + 1;
@@ -1052,6 +1078,9 @@ namespace tobeh.TypoImageGen {
       }
       if (other.EventsParticipated != 0) {
         EventsParticipated = other.EventsParticipated;
+      }
+      if (other.EventsDropValue != 0) {
+        EventsDropValue = other.EventsDropValue;
       }
       if (other.BubbleRank != 0) {
         BubbleRank = other.BubbleRank;
@@ -1130,26 +1159,30 @@ namespace tobeh.TypoImageGen {
             break;
           }
           case 88: {
-            BubbleRank = input.ReadInt32();
+            EventsDropValue = input.ReadInt32();
             break;
           }
           case 96: {
-            DropRank = input.ReadInt32();
+            BubbleRank = input.ReadInt32();
             break;
           }
           case 104: {
-            ServersConnected = input.ReadInt32();
+            DropRank = input.ReadInt32();
             break;
           }
           case 112: {
-            IsPatron = input.ReadBool();
+            ServersConnected = input.ReadInt32();
             break;
           }
           case 120: {
-            IsEarlyUser = input.ReadBool();
+            IsPatron = input.ReadBool();
             break;
           }
           case 128: {
+            IsEarlyUser = input.ReadBool();
+            break;
+          }
+          case 136: {
             IsModerator = input.ReadBool();
             break;
           }
@@ -1212,26 +1245,30 @@ namespace tobeh.TypoImageGen {
             break;
           }
           case 88: {
-            BubbleRank = input.ReadInt32();
+            EventsDropValue = input.ReadInt32();
             break;
           }
           case 96: {
-            DropRank = input.ReadInt32();
+            BubbleRank = input.ReadInt32();
             break;
           }
           case 104: {
-            ServersConnected = input.ReadInt32();
+            DropRank = input.ReadInt32();
             break;
           }
           case 112: {
-            IsPatron = input.ReadBool();
+            ServersConnected = input.ReadInt32();
             break;
           }
           case 120: {
-            IsEarlyUser = input.ReadBool();
+            IsPatron = input.ReadBool();
             break;
           }
           case 128: {
+            IsEarlyUser = input.ReadBool();
+            break;
+          }
+          case 136: {
             IsModerator = input.ReadBool();
             break;
           }

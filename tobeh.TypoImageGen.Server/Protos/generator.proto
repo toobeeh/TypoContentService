@@ -33,12 +33,13 @@ message GenerateCardMessage {
   string firstSeen = 8;
   int32 spritesCount = 9;
   int32 eventsParticipated = 10;
-  int32 bubbleRank = 11;
-  int32 dropRank = 12;
-  int32 serversConnected = 13;
-  bool isPatron = 14;
-  bool isEarlyUser = 15;
-  bool isModerator = 16;  
+  int32 eventsDropValue = 11;
+  int32 bubbleRank = 12;
+  int32 dropRank = 13;
+  int32 serversConnected = 14;
+  bool isPatron = 15;
+  bool isEarlyUser = 16;
+  bool isModerator = 17;  
 }
 
 message FileChunkMessage {

@@ -38,7 +38,7 @@ public class ComboImageGenerator(
         var bytesTasks = combo.Select(async sprite => new {Bytes = await cachedFileProvider.GetBytesFromUrl(sprite.Url), Sprite = sprite});
         var bytes = await Task.WhenAll(bytesTasks);
      
-        IMagickImage? comboImage = null;
+        var comboImage = new MagickImage(MagickColors.Transparent, 80, 80);
         foreach (var imageBytes in bytes)
         {
             using var collection = new MagickImageCollection(imageBytes.Bytes);
@@ -49,14 +49,7 @@ public class ComboImageGenerator(
                 modulated.Modulate(new Percentage(100), new Percentage(100), new Percentage(hueShift));
             }
             
-            if (comboImage is not null)
-            {
-                comboImage.Composite(modulated, CompositeOperator.Over);
-            }
-            else
-            {
-                comboImage = modulated;
-            }
+            comboImage.Composite(modulated, CompositeOperator.Over);
         }
 
         if (comboImage is null) throw new Exception("No frames added");
