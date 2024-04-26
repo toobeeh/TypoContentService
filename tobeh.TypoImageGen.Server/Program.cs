@@ -1,4 +1,5 @@
 using System.Globalization;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using tobeh.TypoImageGen.Server.Config;
 using tobeh.TypoImageGen.Server.Grpc;
 using tobeh.TypoImageGen.Server.Service;
@@ -14,6 +15,13 @@ public class Program
         CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
         
         var builder = WebApplication.CreateBuilder(args);
+        
+        // configure kestrel
+        builder.WebHost.ConfigureKestrel(options =>
+        {
+            // Setup a HTTP/2 endpoint without TLS.
+            options.ListenAnyIP(builder.Configuration.GetRequiredSection("Grpc").GetValue<int>("HostPort"), o => o.Protocols = HttpProtocols.Http2);
+        });
 
         // Add services to the container.
         builder.Services.AddGrpc();

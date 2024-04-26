@@ -26,9 +26,14 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 
+USER root
+
+
+RUN apt-get update \
+    && apt-get install -y libfontconfig
+
 # Copy the entrypoint script
 COPY .docker/entrypoint.sh .
-USER root
 RUN chmod +x entrypoint.sh
 USER $APP_UID
 

@@ -8,4 +8,7 @@ services:
       dockerfile: .docker/Dockerfile 
     restart: unless-stopped
     environment:
-      - GRPC_VALMAR_URL=http://localhost:5175
+      - GRPC_VALMAR_URL=http://host.docker.internal:5175
+    ports:
+      - "5221:8080"
+      
