@@ -7,7 +7,7 @@ public partial class StaticFiles
 {
     public partial class StaticFilesClient
     {
-        public async Task AddFileFromBytes(byte[] bytes, string name, string extension)
+        public async Task AddFileFromBytes(byte[] bytes, string name, string extension, FileType type)
         {
             var messages = FileChunkCollectorExtension
                 .CreateByteChunks(bytes, name, extension)
@@ -17,7 +17,7 @@ public partial class StaticFiles
             messages.Add(new AddFileMessage { FileInformation = new FileInformationMessage
             {
                 Name = $"{name}.{extension}",
-                Type = FileType.Drop
+                Type = type
             }});
 
             var stream = AddFile().RequestStream;
