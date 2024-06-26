@@ -5,6 +5,10 @@ option csharp_namespace = "tobeh.TypoContentService";
 
 package content;
 
+service Content {
+  
+}
+
 message FileChunkMessage {
   bytes chunk = 1;
   int32 chunkIndex = 2;

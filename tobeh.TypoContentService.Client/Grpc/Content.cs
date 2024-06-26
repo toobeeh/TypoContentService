@@ -27,7 +27,8 @@ namespace tobeh.TypoContentService {
             "Cg1jb250ZW50LnByb3RvEgdjb250ZW50Ghtnb29nbGUvcHJvdG9idWYvZW1w",
             "dHkucHJvdG8iVQoQRmlsZUNodW5rTWVzc2FnZRINCgVjaHVuaxgBIAEoDBIS",
             "CgpjaHVua0luZGV4GAIgASgFEgwKBG5hbWUYAyABKAkSEAoIZmlsZVR5cGUY",
-            "BCABKAlCG6oCGHRvYmVoLlR5cG9Db250ZW50U2VydmljZWIGcHJvdG8z"));
+            "BCABKAkyCQoHQ29udGVudEIbqgIYdG9iZWguVHlwb0NvbnRlbnRTZXJ2aWNl",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

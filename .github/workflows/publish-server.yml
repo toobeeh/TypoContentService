@@ -9,7 +9,7 @@ on:
       - 'tobeh.TypoContentService.Server/**'
 
 env:
-  IMAGE_NAME: TypoContentService
+  IMAGE_NAME: typo-content-service
   DOCKERFILE_PATH: ./tobeh.TypoContentService.Server/.docker/Dockerfile
 
 jobs:
