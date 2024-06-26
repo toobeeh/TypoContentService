@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - '.github/workflows/publish-client.yml'
-      - 'tobeh.TypoImageGen.Client/**'
+      - 'tobeh.TypoContentService.Client/**'
 
 jobs:
   build:
@@ -26,16 +26,16 @@ jobs:
         run: echo "::set-output name=timestamp::$(date +%s)"
 
       - name: Build
-        run: dotnet build tobeh.TypoImageGen.Client/tobeh.TypoImageGen.Client.csproj --configuration Release
+        run: dotnet build tobeh.TypoContentService.Client/tobeh.TypoContentService.Client.csproj --configuration Release
 
       - name: Package
         run: |
           PACKAGE_VERSION="0.1.${{ steps.version.outputs.timestamp }}"
-          dotnet pack tobeh.TypoImageGen.Client/tobeh.TypoImageGen.Client.csproj --no-restore --no-build --configuration Release -p:PackageID=tobeh.TypoImageGen.Client -p:PackageVersion=$PACKAGE_VERSION -o ./nupkg
+          dotnet pack tobeh.TypoContentService.Client/tobeh.TypoContentService.Client.csproj --no-restore --no-build --configuration Release -p:PackageID=tobeh.TypoContentService.Client -p:PackageVersion=$PACKAGE_VERSION -o ./nupkg
 
       - name: Publish
         run: |
           PACKAGE_VERSION="0.1.${{ steps.version.outputs.timestamp }}"
-          dotnet nuget push "./nupkg/tobeh.TypoImageGen.Client.$PACKAGE_VERSION.nupkg" -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
+          dotnet nuget push "./nupkg/tobeh.TypoContentService.Client.$PACKAGE_VERSION.nupkg" -s https://api.nuget.org/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
         env:
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}

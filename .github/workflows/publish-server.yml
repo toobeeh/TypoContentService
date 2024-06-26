@@ -6,11 +6,11 @@ on:
       - main
     paths:
       - '.github/workflows/publish-server.yml'
-      - 'tobeh.TypoImageGen.Server/**'
+      - 'tobeh.TypoContentService.Server/**'
 
 env:
-  IMAGE_NAME: typoimagegen
-  DOCKERFILE_PATH: ./tobeh.TypoImageGen.Server/.docker/Dockerfile
+  IMAGE_NAME: TypoContentService
+  DOCKERFILE_PATH: ./tobeh.TypoContentService.Server/.docker/Dockerfile
 
 jobs:
   build-and-publish:
@@ -30,7 +30,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
-          context: ./tobeh.TypoImageGen.Server
+          context: ./tobeh.TypoContentService.Server
           file: ${{ env.DOCKERFILE_PATH }}
           push: true
           tags: ghcr.io/toobeeh/${{ env.IMAGE_NAME }}:latest
