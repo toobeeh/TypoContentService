@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+option csharp_namespace = "tobeh.TypoContentService";
+
+package content;
+
+message FileChunkMessage {
+  bytes chunk = 1;
+  int32 chunkIndex = 2;
+  string name = 3;
+  string fileType = 4;  
+}
+
+

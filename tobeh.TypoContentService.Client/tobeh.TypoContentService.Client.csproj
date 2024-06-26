@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RepositoryUrl>https://github.com/toobeeh/TypoImageGen</RepositoryUrl>
+        <RootNamespace>tobeh.TypoContentService.Client</RootNamespace>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Grpc.AspNetCore" Version="2.57.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Protobuf Update="../tobeh.TypoContentService.Server/Protos/*.proto" />
+        <Protobuf Include="../tobeh.TypoContentService.Server/Protos/*.proto" GrpcServices="Client" ProtoRoot="../tobeh.TypoContentService.Server/Protos">
+            <Access>Public</Access>
+            <ProtoCompile>True</ProtoCompile>
+            <CompileOutputs>True</CompileOutputs>
+            <OutputDir>Grpc</OutputDir>
+            <Generator>MSBuild:Compile</Generator>
+        </Protobuf>
+    </ItemGroup>
+
+</Project>

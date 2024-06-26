@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+import "content.proto";
+import "google/protobuf/empty.proto";
+option csharp_namespace = "tobeh.TypoContentService";
+package staticFiles;
+
+enum FileType {
+  Sprite = 0;
+  Scene = 1;
+  EventSprite = 2;
+  Drop = 3;
+}
+
+service StaticFiles {
+  
+  // Add a new file to the static data repo
+  rpc AddFile (stream AddFileMessage) returns (google.protobuf.Empty);
+}
+
+message FileInformationMessage {
+  string name = 1;
+  FileType type = 2;
+}
+
+message AddFileMessage {
+  oneof data {
+    content.FileChunkMessage fileChunk = 1;
+    FileInformationMessage fileInformation = 2;
+  }
+}
+
+
+
