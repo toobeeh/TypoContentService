@@ -39,7 +39,6 @@
     <ItemGroup>
       <Content Include=".docker\docker-compose.yml" />
       <Content Include=".docker\Dockerfile" />
-      <Content Include=".docker\entrypoint.sh" />
     </ItemGroup>
 
 </Project>
