@@ -1,8 +1,8 @@
-# TypoImageGen  
+# TypoContentService
 ![NuGet Version](https://img.shields.io/nuget/v/tobeh.TypoContentService.Client?style=flat&logo=nuget&label=NuGet&color=blue)
 
 
-TypoImageGen is a small gRPC microservice to generate assets for skribbltypo.  
+TypoContentService is a small gRPC microservice to generate assets for skribbltypo.  
 This includes for example generating sprite combo images (stacking gif frames) or rendering the customcard of typo.
 
 ## Server
