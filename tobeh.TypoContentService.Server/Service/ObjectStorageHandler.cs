@@ -1,5 +1,7 @@
 using System.Net.Mime;
+using Amazon;
 using Amazon.Runtime;
+using Amazon.Runtime.CredentialManagement;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Microsoft.Extensions.Options;
@@ -14,14 +16,14 @@ public class ObjectStorageHandler(IOptions<S3Config> config, ILogger<ObjectStora
         new BasicAWSCredentials(config.Value.AccessKey, config.Value.SecretKey),  
         new AmazonS3Config
         {
-            ServiceURL = "https://eu2.contabostorage.com/",
-            ForcePathStyle = true,
+            ServiceURL = config.Value.ServiceUrl,
+            ForcePathStyle = true
         });
 
     public async Task<string> UploadFileToBucket(string bucket, string name, string fileExtension, byte[] content)
     {
         logger.LogTrace("UploadFileToBucket({bucket}, {name}, {fileExtension}, {content})", bucket, name, fileExtension, content);
-        
+
         // compute mime type
         string contentType;
         try
@@ -32,21 +34,23 @@ public class ObjectStorageHandler(IOptions<S3Config> config, ILogger<ObjectStora
         {
             contentType = MediaTypeNames.Application.Octet;
         }
+
+        var key = $"{name}.{fileExtension}";
         
         // fill request details
         var putRequest = new PutObjectRequest
         {
             BucketName = bucket,
-            Key = name,
+            Key = key,
             ContentType = contentType,
             CannedACL = S3CannedACL.PublicRead
         };
         
         // write content to request and upload
-        await putRequest.InputStream.WriteAsync(content);
+        putRequest.InputStream = new MemoryStream(content);
         await _client.PutObjectAsync(putRequest);
-        
-        return $"{name}.{fileExtension}";;
+
+        return key;
     }
     
     public async Task DeleteFileFromBucket(string bucket, string name)

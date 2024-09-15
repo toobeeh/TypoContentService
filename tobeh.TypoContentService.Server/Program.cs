@@ -38,6 +38,7 @@ public class Program
         builder.Services.AddScoped<CloudService>();
         builder.Services.Configure<ImageGeneratorConfig>(builder.Configuration.GetSection("ImageGenerator"));
         builder.Services.Configure<GitConfig>(builder.Configuration.GetSection("Git"));
+        builder.Services.Configure<S3Config>(builder.Configuration.GetSection("S3"));
 
         var app = builder.Build();
 
