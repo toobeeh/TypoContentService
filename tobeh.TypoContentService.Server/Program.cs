@@ -34,6 +34,8 @@ public class Program
         builder.Services.AddScoped<ComboImageGenerator>();
         builder.Services.AddScoped<CardImageGenerator>();
         builder.Services.AddScoped<GitHandler>();
+        builder.Services.AddSingleton<ObjectStorageHandler>();
+        builder.Services.AddScoped<CloudService>();
         builder.Services.Configure<ImageGeneratorConfig>(builder.Configuration.GetSection("ImageGenerator"));
         builder.Services.Configure<GitConfig>(builder.Configuration.GetSection("Git"));
 
@@ -42,6 +44,7 @@ public class Program
         // Configure the HTTP request pipeline
         app.MapGrpcService<ImageGeneratorGrpcService>();
         app.MapGrpcService<StaticFilesGrpcService>();
+        app.MapGrpcService<ObjectStorageGrpcService>();
         app.MapGet("/",
             () =>
                 "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");

@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+import "content.proto";
+import "google/protobuf/empty.proto";
+
+option csharp_namespace = "tobeh.TypoContentService";
+package objectStorage;
+
+service ObjectStorage {
+
+  // Upload an image to the cloud and save its tags
+  rpc SaveImageToCloud (stream SaveImageToCloudMessage) returns (google.protobuf.Empty);
+  
+  // Delete an image from the cloud
+  rpc DeleteImageFromCloud (CloudImageIdentificationMessage) returns (google.protobuf.Empty);
+  
+}
+
+message CloudImageIdentificationMessage {
+  int64 imageId = 1;
+  string userFolder = 2;
+}
+
+message SaveImageToCloudMessage {
+  oneof data {
+    content.FileChunkMessage imageFileChunk = 1;
+    content.FileChunkMessage commandsFileChunk = 2;
+    content.FileChunkMessage metaFileChunk = 3;
+    CloudImageIdentificationMessage imageIdentification = 4;
+  }
+}
+
+message DeleteImagesFromCloudMessage {
+  repeated CloudImageIdentificationMessage imageIdentifications = 1;
+}
