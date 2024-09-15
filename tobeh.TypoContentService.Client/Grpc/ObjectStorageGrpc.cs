@@ -50,7 +50,7 @@ namespace tobeh.TypoContentService {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::tobeh.TypoContentService.CloudImageIdentificationMessage> __Marshaller_objectStorage_CloudImageIdentificationMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::tobeh.TypoContentService.CloudImageIdentificationMessage.Parser));
+    static readonly grpc::Marshaller<global::tobeh.TypoContentService.DeleteImagesFromCloudMessage> __Marshaller_objectStorage_DeleteImagesFromCloudMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::tobeh.TypoContentService.DeleteImagesFromCloudMessage.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::tobeh.TypoContentService.SaveImageToCloudMessage, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SaveImageToCloud = new grpc::Method<global::tobeh.TypoContentService.SaveImageToCloudMessage, global::Google.Protobuf.WellKnownTypes.Empty>(
@@ -61,11 +61,11 @@ namespace tobeh.TypoContentService {
         __Marshaller_google_protobuf_Empty);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::tobeh.TypoContentService.CloudImageIdentificationMessage, global::Google.Protobuf.WellKnownTypes.Empty> __Method_DeleteImageFromCloud = new grpc::Method<global::tobeh.TypoContentService.CloudImageIdentificationMessage, global::Google.Protobuf.WellKnownTypes.Empty>(
+    static readonly grpc::Method<global::tobeh.TypoContentService.DeleteImagesFromCloudMessage, global::Google.Protobuf.WellKnownTypes.Empty> __Method_DeleteImagesFromCloud = new grpc::Method<global::tobeh.TypoContentService.DeleteImagesFromCloudMessage, global::Google.Protobuf.WellKnownTypes.Empty>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "DeleteImageFromCloud",
-        __Marshaller_objectStorage_CloudImageIdentificationMessage,
+        "DeleteImagesFromCloud",
+        __Marshaller_objectStorage_DeleteImagesFromCloudMessage,
         __Marshaller_google_protobuf_Empty);
 
     /// <summary>Service descriptor</summary>
@@ -124,7 +124,7 @@ namespace tobeh.TypoContentService {
         return CallInvoker.AsyncClientStreamingCall(__Method_SaveImageToCloud, null, options);
       }
       /// <summary>
-      /// Delete an image from the cloud
+      /// Delete images from the cloud
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -132,23 +132,23 @@ namespace tobeh.TypoContentService {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty DeleteImageFromCloud(global::tobeh.TypoContentService.CloudImageIdentificationMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Google.Protobuf.WellKnownTypes.Empty DeleteImagesFromCloud(global::tobeh.TypoContentService.DeleteImagesFromCloudMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return DeleteImageFromCloud(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return DeleteImagesFromCloud(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Delete an image from the cloud
+      /// Delete images from the cloud
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Google.Protobuf.WellKnownTypes.Empty DeleteImageFromCloud(global::tobeh.TypoContentService.CloudImageIdentificationMessage request, grpc::CallOptions options)
+      public virtual global::Google.Protobuf.WellKnownTypes.Empty DeleteImagesFromCloud(global::tobeh.TypoContentService.DeleteImagesFromCloudMessage request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_DeleteImageFromCloud, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_DeleteImagesFromCloud, null, options, request);
       }
       /// <summary>
-      /// Delete an image from the cloud
+      /// Delete images from the cloud
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -156,20 +156,20 @@ namespace tobeh.TypoContentService {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> DeleteImageFromCloudAsync(global::tobeh.TypoContentService.CloudImageIdentificationMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> DeleteImagesFromCloudAsync(global::tobeh.TypoContentService.DeleteImagesFromCloudMessage request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return DeleteImageFromCloudAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return DeleteImagesFromCloudAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Delete an image from the cloud
+      /// Delete images from the cloud
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> DeleteImageFromCloudAsync(global::tobeh.TypoContentService.CloudImageIdentificationMessage request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Google.Protobuf.WellKnownTypes.Empty> DeleteImagesFromCloudAsync(global::tobeh.TypoContentService.DeleteImagesFromCloudMessage request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_DeleteImageFromCloud, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_DeleteImagesFromCloud, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]

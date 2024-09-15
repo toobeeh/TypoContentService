@@ -33,21 +33,20 @@ namespace tobeh.TypoContentService {
             "LkZpbGVDaHVua01lc3NhZ2VIABIyCg1tZXRhRmlsZUNodW5rGAMgASgLMhku",
             "Y29udGVudC5GaWxlQ2h1bmtNZXNzYWdlSAASTQoTaW1hZ2VJZGVudGlmaWNh",
             "dGlvbhgEIAEoCzIuLm9iamVjdFN0b3JhZ2UuQ2xvdWRJbWFnZUlkZW50aWZp",
-            "Y2F0aW9uTWVzc2FnZUgAQgYKBGRhdGEibAocRGVsZXRlSW1hZ2VzRnJvbUNs",
-            "b3VkTWVzc2FnZRJMChRpbWFnZUlkZW50aWZpY2F0aW9ucxgBIAMoCzIuLm9i",
-            "amVjdFN0b3JhZ2UuQ2xvdWRJbWFnZUlkZW50aWZpY2F0aW9uTWVzc2FnZTLF",
-            "AQoNT2JqZWN0U3RvcmFnZRJUChBTYXZlSW1hZ2VUb0Nsb3VkEiYub2JqZWN0",
-            "U3RvcmFnZS5TYXZlSW1hZ2VUb0Nsb3VkTWVzc2FnZRoWLmdvb2dsZS5wcm90",
-            "b2J1Zi5FbXB0eSgBEl4KFERlbGV0ZUltYWdlRnJvbUNsb3VkEi4ub2JqZWN0",
-            "U3RvcmFnZS5DbG91ZEltYWdlSWRlbnRpZmljYXRpb25NZXNzYWdlGhYuZ29v",
-            "Z2xlLnByb3RvYnVmLkVtcHR5QhuqAhh0b2JlaC5UeXBvQ29udGVudFNlcnZp",
-            "Y2ViBnByb3RvMw=="));
+            "Y2F0aW9uTWVzc2FnZUgAQgYKBGRhdGEiRAocRGVsZXRlSW1hZ2VzRnJvbUNs",
+            "b3VkTWVzc2FnZRISCgp1c2VyRm9sZGVyGAEgASgJEhAKCGltYWdlSWRzGAIg",
+            "AygDMsMBCg1PYmplY3RTdG9yYWdlElQKEFNhdmVJbWFnZVRvQ2xvdWQSJi5v",
+            "YmplY3RTdG9yYWdlLlNhdmVJbWFnZVRvQ2xvdWRNZXNzYWdlGhYuZ29vZ2xl",
+            "LnByb3RvYnVmLkVtcHR5KAESXAoVRGVsZXRlSW1hZ2VzRnJvbUNsb3VkEisu",
+            "b2JqZWN0U3RvcmFnZS5EZWxldGVJbWFnZXNGcm9tQ2xvdWRNZXNzYWdlGhYu",
+            "Z29vZ2xlLnByb3RvYnVmLkVtcHR5QhuqAhh0b2JlaC5UeXBvQ29udGVudFNl",
+            "cnZpY2ViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::tobeh.TypoContentService.ContentReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoContentService.CloudImageIdentificationMessage), global::tobeh.TypoContentService.CloudImageIdentificationMessage.Parser, new[]{ "ImageId", "UserFolder" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoContentService.SaveImageToCloudMessage), global::tobeh.TypoContentService.SaveImageToCloudMessage.Parser, new[]{ "ImageFileChunk", "CommandsFileChunk", "MetaFileChunk", "ImageIdentification" }, new[]{ "Data" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoContentService.DeleteImagesFromCloudMessage), global::tobeh.TypoContentService.DeleteImagesFromCloudMessage.Parser, new[]{ "ImageIdentifications" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::tobeh.TypoContentService.DeleteImagesFromCloudMessage), global::tobeh.TypoContentService.DeleteImagesFromCloudMessage.Parser, new[]{ "UserFolder", "ImageIds" }, null, null, null, null)
           }));
     }
     #endregion
@@ -705,7 +704,8 @@ namespace tobeh.TypoContentService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeleteImagesFromCloudMessage(DeleteImagesFromCloudMessage other) : this() {
-      imageIdentifications_ = other.imageIdentifications_.Clone();
+      userFolder_ = other.userFolder_;
+      imageIds_ = other.imageIds_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -715,15 +715,27 @@ namespace tobeh.TypoContentService {
       return new DeleteImagesFromCloudMessage(this);
     }
 
-    /// <summary>Field number for the "imageIdentifications" field.</summary>
-    public const int ImageIdentificationsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::tobeh.TypoContentService.CloudImageIdentificationMessage> _repeated_imageIdentifications_codec
-        = pb::FieldCodec.ForMessage(10, global::tobeh.TypoContentService.CloudImageIdentificationMessage.Parser);
-    private readonly pbc::RepeatedField<global::tobeh.TypoContentService.CloudImageIdentificationMessage> imageIdentifications_ = new pbc::RepeatedField<global::tobeh.TypoContentService.CloudImageIdentificationMessage>();
+    /// <summary>Field number for the "userFolder" field.</summary>
+    public const int UserFolderFieldNumber = 1;
+    private string userFolder_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::tobeh.TypoContentService.CloudImageIdentificationMessage> ImageIdentifications {
-      get { return imageIdentifications_; }
+    public string UserFolder {
+      get { return userFolder_; }
+      set {
+        userFolder_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "imageIds" field.</summary>
+    public const int ImageIdsFieldNumber = 2;
+    private static readonly pb::FieldCodec<long> _repeated_imageIds_codec
+        = pb::FieldCodec.ForInt64(18);
+    private readonly pbc::RepeatedField<long> imageIds_ = new pbc::RepeatedField<long>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<long> ImageIds {
+      get { return imageIds_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -741,7 +753,8 @@ namespace tobeh.TypoContentService {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!imageIdentifications_.Equals(other.imageIdentifications_)) return false;
+      if (UserFolder != other.UserFolder) return false;
+      if(!imageIds_.Equals(other.imageIds_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -749,7 +762,8 @@ namespace tobeh.TypoContentService {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= imageIdentifications_.GetHashCode();
+      if (UserFolder.Length != 0) hash ^= UserFolder.GetHashCode();
+      hash ^= imageIds_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -768,7 +782,11 @@ namespace tobeh.TypoContentService {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      imageIdentifications_.WriteTo(output, _repeated_imageIdentifications_codec);
+      if (UserFolder.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(UserFolder);
+      }
+      imageIds_.WriteTo(output, _repeated_imageIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -779,7 +797,11 @@ namespace tobeh.TypoContentService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      imageIdentifications_.WriteTo(ref output, _repeated_imageIdentifications_codec);
+      if (UserFolder.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(UserFolder);
+      }
+      imageIds_.WriteTo(ref output, _repeated_imageIds_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -790,7 +812,10 @@ namespace tobeh.TypoContentService {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      size += imageIdentifications_.CalculateSize(_repeated_imageIdentifications_codec);
+      if (UserFolder.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(UserFolder);
+      }
+      size += imageIds_.CalculateSize(_repeated_imageIds_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -803,7 +828,10 @@ namespace tobeh.TypoContentService {
       if (other == null) {
         return;
       }
-      imageIdentifications_.Add(other.imageIdentifications_);
+      if (other.UserFolder.Length != 0) {
+        UserFolder = other.UserFolder;
+      }
+      imageIds_.Add(other.imageIds_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -820,7 +848,12 @@ namespace tobeh.TypoContentService {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            imageIdentifications_.AddEntriesFrom(input, _repeated_imageIdentifications_codec);
+            UserFolder = input.ReadString();
+            break;
+          }
+          case 18:
+          case 16: {
+            imageIds_.AddEntriesFrom(input, _repeated_imageIds_codec);
             break;
           }
         }
@@ -839,7 +872,12 @@ namespace tobeh.TypoContentService {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            imageIdentifications_.AddEntriesFrom(ref input, _repeated_imageIdentifications_codec);
+            UserFolder = input.ReadString();
+            break;
+          }
+          case 18:
+          case 16: {
+            imageIds_.AddEntriesFrom(ref input, _repeated_imageIds_codec);
             break;
           }
         }

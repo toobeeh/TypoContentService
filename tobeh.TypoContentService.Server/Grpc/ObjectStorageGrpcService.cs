@@ -52,8 +52,11 @@ public class ObjectStorageGrpcService(
         return new Empty();
     }
 
-    public override async Task<Empty> DeleteImageFromCloud(CloudImageIdentificationMessage request, ServerCallContext context)
+    public override async Task<Empty> DeleteImagesFromCloud(DeleteImagesFromCloudMessage request, ServerCallContext context)
     {
-        return await base.DeleteImageFromCloud(request, context);
+        logger.LogTrace("DeleteImagesFromCloud({request})", request);
+
+        await cloudService.DeleteImagesFromCloud(request.UserFolder, request.ImageIds.ToArray());
+        return new Empty();
     }
 }

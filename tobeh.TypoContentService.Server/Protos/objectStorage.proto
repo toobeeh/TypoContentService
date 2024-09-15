@@ -11,8 +11,8 @@ service ObjectStorage {
   // Upload an image to the cloud and save its tags
   rpc SaveImageToCloud (stream SaveImageToCloudMessage) returns (google.protobuf.Empty);
   
-  // Delete an image from the cloud
-  rpc DeleteImageFromCloud (CloudImageIdentificationMessage) returns (google.protobuf.Empty);
+  // Delete images from the cloud
+  rpc DeleteImagesFromCloud (DeleteImagesFromCloudMessage) returns (google.protobuf.Empty);
   
 }
 
@@ -31,5 +31,6 @@ message SaveImageToCloudMessage {
 }
 
 message DeleteImagesFromCloudMessage {
-  repeated CloudImageIdentificationMessage imageIdentifications = 1;
+  string userFolder = 1;
+  repeated int64 imageIds = 2;
 }

@@ -53,16 +53,20 @@ public class ObjectStorageHandler(IOptions<S3Config> config, ILogger<ObjectStora
         return key;
     }
     
-    public async Task DeleteFileFromBucket(string bucket, string name)
+    public async Task DeleteFilesFromBucket(string bucket, IEnumerable<string> names)
     {
-        logger.LogTrace("DeleteFileFromBucket({bucket}, {name})", bucket, name);
+        logger.LogTrace("DeleteFilesFromBucket({bucket}, {names})", bucket, names);
         
-        var deleteRequest = new DeleteObjectRequest
+        var deleteRequest = new DeleteObjectsRequest
         {
             BucketName = bucket,
-            Key = name
         };
         
-        await _client.DeleteObjectAsync(deleteRequest);
+        foreach (var name in names)
+        {
+            deleteRequest.AddKey(name);
+        }
+        
+        await _client.DeleteObjectsAsync(deleteRequest);
     }
 }

@@ -32,7 +32,7 @@ public class CloudService(IOptions<S3Config> config, ILogger<CloudService> logge
             {
                 try
                 {
-                    await objectStorageHandler.DeleteFileFromBucket(_bucketName, imagePath);
+                    await objectStorageHandler.DeleteFilesFromBucket(_bucketName, [imagePath]);
                 }
                 catch (Exception deleteException)
                 {
@@ -43,7 +43,7 @@ public class CloudService(IOptions<S3Config> config, ILogger<CloudService> logge
             {
                 try
                 {
-                    await objectStorageHandler.DeleteFileFromBucket(_bucketName, commandsPath);
+                    await objectStorageHandler.DeleteFilesFromBucket(_bucketName, [commandsPath]);
                 }
                 catch (Exception deleteException)
                 {
@@ -54,7 +54,7 @@ public class CloudService(IOptions<S3Config> config, ILogger<CloudService> logge
             {
                 try
                 {
-                    await objectStorageHandler.DeleteFileFromBucket(_bucketName, metaPath);
+                    await objectStorageHandler.DeleteFilesFromBucket(_bucketName, [metaPath]);
                 }
                 catch (Exception deleteException)
                 {
@@ -66,20 +66,17 @@ public class CloudService(IOptions<S3Config> config, ILogger<CloudService> logge
         }
     }
     
-    public async Task DeleteImageFromCloud(string userFolder, long imageId)
+    public async Task DeleteImagesFromCloud(string userFolder, IEnumerable<long> imageIds)
     {
-        logger.LogTrace("DeleteImageFromCloud({userFolder}, {imageId})", userFolder, imageId);
+        logger.LogTrace("DeleteImageFromCloud({userFolder}, {imageIds})", userFolder, imageIds);
 
-        try
-        {
-            await objectStorageHandler.DeleteFileFromBucket(_bucketName, $"{userFolder}/{imageId}/image.png");
-            await objectStorageHandler.DeleteFileFromBucket(_bucketName, $"{userFolder}/{imageId}/commands.json");
-            await objectStorageHandler.DeleteFileFromBucket(_bucketName, $"{userFolder}/{imageId}/meta.json");
-        }
-        catch (Exception e)
-        {
-            logger.LogError("Failed to delete image {folder}, {id}) from cloud: {e}", userFolder, imageId, e);
-            throw;
-        }
+        var keys = imageIds.SelectMany<long, string>(id =>
+        [
+            $"{userFolder}/{id}/image.png",
+            $"{userFolder}/{id}/commands.json",
+            $"{userFolder}/{id}/meta.json"
+        ]);
+
+        await objectStorageHandler.DeleteFilesFromBucket(_bucketName, keys);
     }
 }
