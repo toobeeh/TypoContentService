@@ -34,6 +34,7 @@ public class StaticFilesGrpcService(
             FileType.Sprite => "sprites/regular",
             FileType.EventSprite => "sprite/event",
             FileType.Scene => "scenes",
+            FileType.Award => "awards",
             _ => throw new ArgumentOutOfRangeException()
         };
         

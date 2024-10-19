@@ -10,6 +10,7 @@ enum FileType {
   Scene = 1;
   EventSprite = 2;
   Drop = 3;
+  Award = 4;
 }
 
 service StaticFiles {
