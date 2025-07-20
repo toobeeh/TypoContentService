@@ -7,7 +7,7 @@ public partial class StaticFiles
 {
     public partial class StaticFilesClient
     {
-        public async Task AddFileFromBytes(byte[] bytes, string name, string extension, FileType type)
+        public async Task WriteFileFromBytes(byte[] bytes, string name, string extension, FileType type, bool overwrite = false)
         {
             var messages = FileChunkCollectorExtension
                 .CreateByteChunks(bytes, name, extension)
@@ -20,7 +20,7 @@ public partial class StaticFiles
                 Type = type
             }});
 
-            var stream = AddFile().RequestStream;
+            var stream = overwrite ? ReplaceFile().RequestStream : AddFile().RequestStream;
             foreach (var message in messages)
             {
                 await stream.WriteAsync(message);
