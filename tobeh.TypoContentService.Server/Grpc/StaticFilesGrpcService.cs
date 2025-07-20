@@ -14,6 +14,22 @@ public class StaticFilesGrpcService(
     {
         logger.LogTrace("AddFile()");
         
+        await WriteFile(requestStream, false);
+        return new Empty();
+    }
+
+    public override async Task<Empty> ReplaceFile(IAsyncStreamReader<AddFileMessage> requestStream, ServerCallContext context)
+    {
+        logger.LogTrace("ReplaceFile()");
+        
+        await WriteFile(requestStream, true);
+        return new Empty();
+    }
+
+    private async Task WriteFile(IAsyncStreamReader<AddFileMessage> requestStream, bool overwrite)
+    {
+        logger.LogTrace("WriteFile()");
+        
         List<FileChunkMessage> chunks = new();
         FileInformationMessage? fileInformation = null;
 
@@ -38,7 +54,6 @@ public class StaticFilesGrpcService(
             _ => throw new ArgumentOutOfRangeException()
         };
         
-        gitHandler.AddFile(chunkBytes.Data, fileInformation.Name, repoPath, $"Add {fileInformation.Type}: {fileInformation.Name}");
-        return new Empty();
+        gitHandler.WriteFile(chunkBytes.Data, fileInformation.Name, repoPath, $"Add {fileInformation.Type}: {fileInformation.Name}", overwrite);
     }
 }

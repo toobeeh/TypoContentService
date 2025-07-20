@@ -32,9 +32,11 @@ namespace tobeh.TypoContentService {
             "aWxlSW5mb3JtYXRpb24YAiABKAsyIy5zdGF0aWNGaWxlcy5GaWxlSW5mb3Jt",
             "YXRpb25NZXNzYWdlSABCBgoEZGF0YSpHCghGaWxlVHlwZRIKCgZTcHJpdGUQ",
             "ABIJCgVTY2VuZRABEg8KC0V2ZW50U3ByaXRlEAISCAoERHJvcBADEgkKBUF3",
-            "YXJkEAQyTwoLU3RhdGljRmlsZXMSQAoHQWRkRmlsZRIbLnN0YXRpY0ZpbGVz",
-            "LkFkZEZpbGVNZXNzYWdlGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5KAFCG6oC",
-            "GHRvYmVoLlR5cG9Db250ZW50U2VydmljZWIGcHJvdG8z"));
+            "YXJkEAQylQEKC1N0YXRpY0ZpbGVzEkAKB0FkZEZpbGUSGy5zdGF0aWNGaWxl",
+            "cy5BZGRGaWxlTWVzc2FnZRoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSgBEkQK",
+            "C1JlcGxhY2VGaWxlEhsuc3RhdGljRmlsZXMuQWRkRmlsZU1lc3NhZ2UaFi5n",
+            "b29nbGUucHJvdG9idWYuRW1wdHkoAUIbqgIYdG9iZWguVHlwb0NvbnRlbnRT",
+            "ZXJ2aWNlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::tobeh.TypoContentService.ContentReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::tobeh.TypoContentService.FileType), }, null, new pbr::GeneratedClrTypeInfo[] {

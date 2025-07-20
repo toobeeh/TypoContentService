@@ -58,6 +58,14 @@ namespace tobeh.TypoContentService {
         __Marshaller_staticFiles_AddFileMessage,
         __Marshaller_google_protobuf_Empty);
 
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::tobeh.TypoContentService.AddFileMessage, global::Google.Protobuf.WellKnownTypes.Empty> __Method_ReplaceFile = new grpc::Method<global::tobeh.TypoContentService.AddFileMessage, global::Google.Protobuf.WellKnownTypes.Empty>(
+        grpc::MethodType.ClientStreaming,
+        __ServiceName,
+        "ReplaceFile",
+        __Marshaller_staticFiles_AddFileMessage,
+        __Marshaller_google_protobuf_Empty);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
@@ -112,6 +120,28 @@ namespace tobeh.TypoContentService {
       public virtual grpc::AsyncClientStreamingCall<global::tobeh.TypoContentService.AddFileMessage, global::Google.Protobuf.WellKnownTypes.Empty> AddFile(grpc::CallOptions options)
       {
         return CallInvoker.AsyncClientStreamingCall(__Method_AddFile, null, options);
+      }
+      /// <summary>
+      /// Replace an existing file of the static data repo
+      /// </summary>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncClientStreamingCall<global::tobeh.TypoContentService.AddFileMessage, global::Google.Protobuf.WellKnownTypes.Empty> ReplaceFile(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ReplaceFile(new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Replace an existing file of the static data repo
+      /// </summary>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncClientStreamingCall<global::tobeh.TypoContentService.AddFileMessage, global::Google.Protobuf.WellKnownTypes.Empty> ReplaceFile(grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncClientStreamingCall(__Method_ReplaceFile, null, options);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]

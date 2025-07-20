@@ -17,6 +17,9 @@ service StaticFiles {
   
   // Add a new file to the static data repo
   rpc AddFile (stream AddFileMessage) returns (google.protobuf.Empty);
+
+  // Replace an existing file of the static data repo
+  rpc ReplaceFile (stream AddFileMessage) returns (google.protobuf.Empty);
 }
 
 message FileInformationMessage {

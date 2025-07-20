@@ -16,9 +16,9 @@ public class GitHandler
         Directory.CreateDirectory(_config.Path);
     }
     
-    public void AddFile(byte[] fileBytes, string fileName, string repoFilePath, string commitMessage)
+    public void WriteFile(byte[] fileBytes, string fileName, string repoFilePath, string commitMessage, bool overwrite = false)
     {
-        _logger.LogTrace("AddFile({fileName}, {repoFilePath}, {commitMessage})", fileName, repoFilePath, commitMessage);
+        _logger.LogTrace("WriteFile({fileName}, {repoFilePath}, {commitMessage})", fileName, repoFilePath, commitMessage);
         
         // Clone the repository
         var repoPath = $"{_config.Path}/static-data-{DateTimeOffset.Now.ToUnixTimeMilliseconds()}";
@@ -36,6 +36,16 @@ public class GitHandler
         {
             // Create a new file in the repository
             var absolutePath = Path.Combine(repoPath, repoFilePath, fileName);
+
+            if (!overwrite && Path.Exists(absolutePath))
+            {
+                throw new InvalidOperationException("File already exists in the repository: " + absolutePath);
+            }
+            if(overwrite && !Path.Exists(absolutePath))
+            {
+                throw new InvalidOperationException("File overwrite target does not exist in the repository: " + absolutePath);
+            }
+            
             File.WriteAllBytes(absolutePath, fileBytes);
 
             // Stage the file
