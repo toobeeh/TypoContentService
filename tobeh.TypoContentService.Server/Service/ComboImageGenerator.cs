@@ -45,7 +45,8 @@ public class ComboImageGenerator(
             
             if(colorMap.TryGetValue(imageBytes.Sprite.Id, out var hueShift))
             {
-                modulated.Modulate(new Percentage(100), new Percentage(100), new Percentage(hueShift));
+                if(hueShift == 0) modulated.Modulate(new Percentage(100), new Percentage(0));
+                else modulated.Modulate(new Percentage(100), new Percentage(100), new Percentage(hueShift));
             }
             
             comboImage.Composite(modulated, CompositeOperator.Over);
